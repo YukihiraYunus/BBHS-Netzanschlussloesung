@@ -1,0 +1,314 @@
+{
+  "strom": {
+    "aktiv": true,
+    "dateien": {
+      "plan": {
+        "label": "Lageplan",
+        "position": 1,
+        "singleFile": true,
+        "hinweistext": "Bitte laden Sie einen amtlichen Lageplan des Gebäudes im Maßstab 1:500 hoch.",
+        "erforderlich": true
+      },
+      "skizze": {
+        "label": "Grundrissskizze",
+        "position": 2,
+        "singleFile": true,
+        "hinweistext": "Bitte laden Sie einen Grundriss des Gebäudes hoch.",
+        "erforderlich": true
+      },
+      "leistungsaufstellung": {
+        "label": "Leistungsaufstellung",
+        "position": 3,
+        "singleFile": true,
+        "hinweistext": "Bitte laden Sie eine Leistungsaufstellung Ihres Stromnetzanschlusses hoch.",
+        "erforderlich": true
+      },
+      "projektschaubildZaehlerschema": {
+        "label": "Projektschaltbild/Zählerschema",
+        "position": 4,
+        "singleFile": true,
+        "hinweistext": "Bitte laden Sie ein Projektschaltbild/Zählerschema hoch.",
+        "erforderlich": true
+      }
+    },
+    "vorgang": {
+      "vorgang": {
+        "aktiv": true,
+        "label": "Vorgang",
+        "optionen": [
+          {
+            "aktiv": false,
+            "label": "Ich möchte einen neuen Netzanschluss",
+            "hinweistext": null
+          },
+          {
+            "aktiv": true,
+            "label": "Zeitlich befristeter Netzanschluss",
+            "hinweistext": "HELLO WORLD"
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Umlegung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Netzanschlussverstärkung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Stilllegung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Unterbrechung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Trennung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Wiederinbetriebnahme",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Zusammenlegung",
+            "hinweistext": null
+          }
+        ],
+        "hinweistext": "Bitte geben Sie an, um welchen Vorgang es sich handelt.",
+        "erforderlich": true
+      },
+      "stilllegung": {
+        "aktiv": false,
+        "label": "Gewünschtes Datum der Stilllegung (optional)",
+        "hinweistext": "HELLO WORLD",
+        "erforderlich": false,
+        "validierung": []
+      },
+      "hausanschlusslaenge": {
+        "aktiv": false,
+        "label": "Hausanschlusslänge",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "terminHindernissfrei": {
+        "aktiv": false,
+        "label": "Termin hindernisfrei",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "wiederinbetriebnahme": {
+        "aktiv": false,
+        "label": "Gewünschtes Datum der Wiederinbetriebnahme (optional)",
+        "hinweistext": null,
+        "validierung": [],
+        "erforderlich": false
+      },
+      "beschreibungUmlegevorhaben": {
+        "aktiv": false,
+        "label": "Kurze Beschreibung des Umlegevorhabens (optional)",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "erhoehungNetzanschlusswert": {
+        "aktiv": false,
+        "label": "Erfolgt durch die Umlegung/Erneuerung eine Erhöhung des Netzanschlusswertes?",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "hindernisseAnschlussstrasse": {
+        "aktiv": false,
+        "label": "Hindernisse im Bereich der Anschlussstraße",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "weiterfuehrendeInformationen": {
+        "aktiv": false,
+        "label": "Weiterführende Informationen (optional)",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "informationstextTerminHindernisse": "Zu welchem Termin ist die Anschlussstraße voraussichtlich hindernissfrei?",
+      "beschreibungHindernisseAnschlussstrasse": {
+        "aktiv": false,
+        "label": "Beschreibung Hindernisse",
+        "hinweistext": null,
+        "erforderlich": false
+      }
+    },
+    "baustrom": {
+      "aktiv": true,
+      "label": "Baustrom",
+      "hinweistext": null
+    },
+    "preisblatt": null,
+    "frontlaenge": {
+      "aktiv": true,
+      "label": "Straßenfrontlänge [in Meter]",
+      "hinweistext": null,
+      "validierung": [
+        {
+          "regex": "^\\d+(,\\d{1,2})?$",
+          "errorMessage": "Bitte geben Sie eine Zahl mit maximal 2 Nachkommastellen ein."
+        }
+      ],
+      "erforderlich": false
+    },
+    "introduction": null,
+    "eigenleistung": {
+      "aktiv": true,
+      "label": "Eigenleistung",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "anschlusspunkt": {
+      "aktiv": true,
+      "label": "Anschlusspunkt",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Im Gebäude"
+        },
+        {
+          "aktiv": true,
+          "label": "Außerhalb des Gebäudes"
+        },
+        {
+          "aktiv": true,
+          "label": "Freifläche"
+        }
+      ],
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "dienstleistung": {
+      "aktiv": true,
+      "label": "Dienstleistung",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "zusatzabfragen": [
+      {
+        "aktiv": true,
+        "label": "Zusatzinformation",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext stromZusatzabfrage",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      },
+      {
+        "aktiv": true,
+        "label": "Zusatzinformation",
+        "header": "Zusatzabfragen2",
+        "hinweistext": "Hinweistext stromZusatzabfrage",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "hauseinfuehrung": {
+      "aktiv": true,
+      "label": "Hauseinführung",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Einzel-/Mehrspartenhauseinführung von Anschlussnehmer gestellt"
+        },
+        {
+          "aktiv": true,
+          "label": "Einzeleinführung, durch VB gestellt"
+        }
+      ],
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "jahresverbrauch": {
+      "aktiv": false,
+      "label": "Erwarteter Jahresverbrauch in kWh",
+      "hinweistext": null,
+      "validierung": [],
+      "erforderlich": true
+    },
+    "kumulierterBedarf": {
+      "aktiv": true,
+      "label": "Kumulierter Bedarf aller Gewerbeeinheiten [kW] (erforderlich)",
+      "hinweistext": null,
+      "validierung": [],
+      "erforderlich": false
+    },
+    "warmwasserbereitung": {
+      "aktiv": false,
+      "label": "Elektrische Warmwasserbereitung",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "fertigstellungstermin": {
+      "aktiv": false,
+      "label": "Gewünschter Fertigstellungstermin",
+      "hinweistext": null,
+      "validierung": [],
+      "erforderlich": false
+    },
+    "hausanschlusssicherung": {
+      "aktiv": true,
+      "label": "Größe Hausanschlusssicherung",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "grundstuecksoberflaeche": {
+      "aktiv": false,
+      "label": "Grundstücksfläche [in qm]",
+      "hinweistext": null,
+      "validierung": [
+        {
+          "regex": "^\\d+(,\\d{1,2})?$",
+          "errorMessage": "Bitte geben Sie eine Zahl mit maximal 2 Nachkommastellen ein."
+        }
+      ],
+      "erforderlich": false
+    },
+    "gesamtleistungOhneZusatz": {
+      "aktiv": false,
+      "label": "Gleichzeitig benötigte  Gesamtleistung ohne Berücksichtigung zusätzlicher Bedarfe [kW] (erforderlich)",
+      "hinweistext": null,
+      "validierung": [],
+      "erforderlich": true
+    },
+    "artDerWarmwasserbereitung": {
+      "aktiv": false,
+      "label": "Art der Warmwasserbereitung",
+      "optionen": [
+        {
+          "aktiv": false,
+          "label": "zentral"
+        },
+        {
+          "aktiv": false,
+          "label": "dezentral"
+        }
+      ],
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "eigenleistungBeschreibung": {
+      "aktiv": true,
+      "label": "Beschreibung der Eigenleistung",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "anmeldungSteuerbareVerbrauchsgeraete": {
+      "aktiv": false,
+      "label": "Anmeldung steuerbarer Verbrauchsgeräte",
+      "hinweistext": null,
+      "erforderlich": false
+    }
+  }
+}
