@@ -1,0 +1,25 @@
+# Bytecode-Dateien und Cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# IDE-/Editor-Dateien
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Betriebssystem-Dateien
+.DS_Store
+Thumbs.db
+
+# Temporäre Dateien
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# Python virtual environments (falls verwendet)
+venv/
+.env/
