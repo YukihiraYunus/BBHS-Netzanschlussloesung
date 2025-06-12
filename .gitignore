@@ -1,4 +1,5 @@
 # Bytecode-Dateien und Cache
+__pycache__
 __pycache__/
 *.py[cod]
 *.pyo
