@@ -4,6 +4,7 @@ def run():
 
     # === 1. MAPPING ===
     original_mapping = {
+        "Auswahl Vorgang (Dropdown)": ("vorgang", "vorgang"),
         "Neuer Netzanschluss": ("vorgang", "vorgang", "optionen", "Ich möchte einen neuen Netzanschluss"),
         "Zeitlich befristeter Netzanschluss": ("vorgang", "vorgang", "optionen", "Zeitlich befristeter Netzanschluss"),
         "Änderung eines bestehenden Netzanschlusses: Umlegung": ("vorgang", "vorgang", "optionen", "Änderung eines bestehenden Netzanschlusses: Umlegung"),
@@ -59,7 +60,7 @@ def run():
 
     # === 3. EXCEL EINLESEN ===
     df = pd.read_excel("Strom/assets/ANLAGE Abfrageformular Teilantrag Strom 2.6.xlsx", sheet_name="Abfrage optionale Felder", header=None)
-    relevant_rows = df.iloc[15:59, [2, 3, 4, 5]]
+    relevant_rows = df.iloc[14:59, [2, 3, 4, 5]]
     relevant_rows.columns = ["label", "status", "pflicht", "hinweis"]
 
 
@@ -71,7 +72,8 @@ def run():
             if key_path in container:
                 entry = container[key_path]
                 if isinstance(entry, dict):
-                    entry["aktiv"] = status_value
+                    if status_value is not None:
+                        entry["aktiv"] = status_value
                     if "erforderlich" in entry:
                         entry["erforderlich"] = required_value
                     if "hinweistext" in entry:
@@ -94,13 +96,20 @@ def run():
             if last_key in container:
                 entry = container[last_key]
                 if isinstance(entry, dict):
-                    entry["aktiv"] = status_value
+                    if status_value is not None:
+                        entry["aktiv"] = status_value
                     if "erforderlich" in entry:
                         entry["erforderlich"] = required_value
                     if "hinweistext" in entry:
                         entry["hinweistext"] = hint_text
                 else:
-                    print(f"⚠️  Kein dict bei: {key_path}")
+                    # Wenn hint_text nicht None ist und wir annehmen, es ist ein Stringfeld:
+                    if hint_text is not None:
+                        container[last_key] = hint_text
+                    elif isinstance(entry, str) and hint_text is None:
+                        container[last_key] = None
+                    else:
+                        print(f"⚠️  Kein dict bei: {key_path}")
             else:
                 print(f"⚠️  Schlüssel nicht gefunden: {key_path}")
 
@@ -131,9 +140,9 @@ def run():
 
         # === Status-Auswertung ===
         if not status or "keine änderung" in status or "nicht änderbar" in status:
-            print(f"ℹ️  Keine Änderung für Label: {row['label']}")
-            continue
-        status_value = False if "aus" in status else True
+            status_value = None  # Kein Update am Aktiv-Status
+        else:
+            status_value = False if "aus" in status else True
 
         # === Pflicht-Auswertung ===
         if "pflicht" in pflicht or "keine änderung" in pflicht:
@@ -144,8 +153,8 @@ def run():
         # === Hinweistext-Auswertung ===
         if "keine änderung" in hinweis_raw.lower():
             hint_text = None  # mache nichts (eigentlich: überspringen, aber update_json erwartet Wert)
-        elif i + 15 == 33 and hinweis_raw.startswith("Beispiel im Testlink:"):
-            hint_text = None
+        elif hinweis_raw.strip() == 'Beispiel im Testlink: "Zu welchem Termin ist die Anschlussstraße voraussichtlich hindernisfrei?"':
+            hint_text = "Zu welchem Termin ist die Anschlussstraße voraussichtlich hindernisfrei?"
         elif hinweis_raw == "" or hinweis_raw.lower() == "nan":
             hint_text = None
         else:

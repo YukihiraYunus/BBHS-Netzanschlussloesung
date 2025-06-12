@@ -82,7 +82,7 @@
             "hinweistext": null
           }
         ],
-        "hinweistext": "Bitte geben Sie an, um welchen Vorgang es sich handelt.",
+        "hinweistext": "TEST",
         "erforderlich": true
       },
       "stilllegung": {
@@ -135,7 +135,7 @@
         "hinweistext": null,
         "erforderlich": false
       },
-      "informationstextTerminHindernisse": "Zu welchem Termin ist die Anschlussstraße voraussichtlich hindernissfrei?",
+      "informationstextTerminHindernisse": "Zu welchem Termin ist die Anschlussstraße voraussichtlich hindernisfrei?",
       "beschreibungHindernisseAnschlussstrasse": {
         "aktiv": false,
         "label": "Beschreibung Hindernisse",
@@ -276,11 +276,11 @@
       "erforderlich": false
     },
     "gesamtleistungOhneZusatz": {
-      "aktiv": false,
+      "aktiv": true,
       "label": "Gleichzeitig benötigte  Gesamtleistung ohne Berücksichtigung zusätzlicher Bedarfe [kW] (erforderlich)",
-      "hinweistext": null,
+      "hinweistext": "TEST BBHS",
       "validierung": [],
-      "erforderlich": true
+      "erforderlich": false
     },
     "artDerWarmwasserbereitung": {
       "aktiv": false,
