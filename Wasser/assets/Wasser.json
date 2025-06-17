@@ -1,0 +1,231 @@
+{
+  "wasser": {
+    "aktiv": true,
+    "dateien": {
+      "plan": {
+        "label": "Lageplan",
+        "position": 1,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "skizze": {
+        "label": "Grundrissskizze",
+        "position": 2,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "zusatzdatei": {
+        "label": "Sonstige Dateien",
+        "position": 3,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": false
+      }
+    },
+    "vorgang": {
+      "vorgang": {
+        "aktiv": true,
+        "label": "Vorgang",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Ich möchte einen neuen Netzanschluss",
+            "hinweistext": "Hinweistext neuerNetzanschluss"
+          },
+          {
+            "aktiv": true,
+            "label": "Zeitlich befristeter Netzanschluss",
+            "hinweistext": "Hinweistext zeitlichBefristeterNetzanschluss"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Umlegung",
+            "hinweistext": "Hinweistext aenderungUmlegung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Leistungsänderung",
+            "hinweistext": "Hinweistext aenderungLeistungsaenderung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Netzanschlusses: Stilllegung",
+            "hinweistext": "Hinweistext aenderungStilllegung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Netzanschlusses: Unterbrechung",
+            "hinweistext": "Hinweistext aenderungUnterbrechung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Netzanschlusses: Trennung",
+            "hinweistext": "Hinweistext aenderungTrennung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Netzanschlusses: Wiederinbetriebnahme",
+            "hinweistext": "Hinweistext aenderungWiederinbetriebnahme"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "stilllegung": {
+        "aktiv": true,
+        "label": "Gewünschtes Datum der Stilllegung (optional)",
+        "hinweistext": "Format: DD.MM.YYYY",
+        "validierung": [],
+        "erforderlich": false
+      },
+      "wiederinbetriebnahme": {
+        "aktiv": true,
+        "label": "Gewünschtes Datum der Wiederinbetriebnahme (optional)",
+        "hinweistext": "Format: DD.MM.YYYY",
+        "validierung": [],
+        "erforderlich": false
+      },
+      "beschreibungUmlegevorhaben": {
+        "aktiv": true,
+        "label": "Kurze Beschreibung des Umlegevorhabens (optional)",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "erhoehungNetzanschlusswert": {
+        "aktiv": true,
+        "label": "Erfolgt durch die Umlegung/Erneuerung eine Erhöhung des Netzanschlusswertes?",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "weiterfuehrendeInformationen": {
+        "aktiv": true,
+        "label": "Weiterführende Informationen (optional)",
+        "hinweistext": null,
+        "erforderlich": false
+      }
+    },
+    "preisblatt": null,
+    "frontlaenge": {
+      "aktiv": true,
+      "label": "Straßenfrontlänge [in Meter]",
+      "hinweistext": "Hinweistext straßenfrontlaenge",
+      "validierung": [
+        {
+          "regex": "^\\d+(,\\d{1,2})?$",
+          "errorMessage": "Bitte geben Sie eine Zahl mit maximal 2 Nachkommastellen ein."
+        }
+      ],
+      "erforderlich": false
+    },
+    "bedarfsmenge": {
+      "aktiv": true,
+      "label": "Voraussichtliche Bedarfsmenge [m³/h]",
+      "hinweistext": "Hinweistext wasserVoraussichtlicheBedarfsmenge",
+      "platzhalter": null,
+      "validierung": [],
+      "erforderlich": true
+    },
+    "introduction": null,
+    "zaehlerstand": {
+      "aktiv": true,
+      "label": "Zählerstand (in kWh)",
+      "hinweistext": "Hinweistext Zählerstand",
+      "erforderlich": true
+    },
+    "anforderungen": {
+      "aktiv": true,
+      "label": "Weitergehende Anforderungen",
+      "hinweistext": "Hinweistext wasserWeitergehendeAnforderungen",
+      "platzhalter": null,
+      "validierung": [],
+      "erforderlich": true
+    },
+    "zaehlernummer": {
+      "aktiv": true,
+      "label": "Zählernummer",
+      "hinweistext": "Hinweistext Zählernummer",
+      "erforderlich": true
+    },
+    "zusatzabfragen": [
+      {
+        "aktiv": true,
+        "label": "Zusatzinformation",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext wasserZusatzinformation",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "artDerEinrichtung": {
+      "aktiv": true,
+      "label": "Art der Einrichtung",
+      "hinweistext": "Hinweistext Art der Einrichtung",
+      "erforderlich": true
+    },
+    "bedarfEinrichtung": {
+      "aktiv": true,
+      "label": "Bedarf der Einrichtung in m³/s",
+      "hinweistext": "Hinweistext Bedarf Einrichtung",
+      "erforderlich": true
+    },
+    "spitzendurchfluss": {
+      "aktiv": true,
+      "label": "Spitzendurchfluss (ohne Löschwasser) in l/s (vs) (erforderlich)",
+      "hinweistext": "Hinweistext wasserSpitzendurchfluss",
+      "platzhalter": null,
+      "validierung": [],
+      "erforderlich": true
+    },
+    "bewaesserungssaeule": {
+      "aktiv": true,
+      "label": "Einrichtung einer Bauwassersäule gewünscht",
+      "hinweistext": "Hinweistext wasserBauwassersaeule"
+    },
+    "hausanschlusslaenge": {
+      "aktiv": true,
+      "label": "Hausanschlusslänge [in Meter]",
+      "hinweistext": "Hinweistext Hausanschlusslänge",
+      "erforderlich": true
+    },
+    "eigenwasserversorgung": {
+      "aktiv": true,
+      "label": "Ist eine Eigenwasserversorgung (einschließlich Regenwasser) vorhanden oder geplant?",
+      "hinweistext": "Hinweistext Eigenwasserversorgung",
+      "erforderlich": true
+    },
+    "fertigstellungstermin": {
+      "aktiv": true,
+      "label": "Gewünschter Fertigstellungstermin",
+      "hinweistext": "Hinweistext gewuenschterFertigstellungstermin",
+      "validierung": [],
+      "erforderlich": false
+    },
+    "einrichtungenVorhanden": {
+      "aktiv": true,
+      "label": "Sind zusätzliche Einrichtungen mit besonderem Wasserbedarf vorhanden?",
+      "hinweistext": "Hinweistext Einrichtungen vorhanden",
+      "erforderlich": true
+    },
+    "grundstuecksoberflaeche": {
+      "aktiv": true,
+      "label": "Grundstücksfläche [in qm]",
+      "hinweistext": "Hinweistext grundstuecksflaeche",
+      "validierung": [
+        {
+          "regex": "^\\d+(,\\d{1,2})?$",
+          "errorMessage": "Bitte geben Sie eine Zahl mit maximal 2 Nachkommastellen ein."
+        }
+      ],
+      "erforderlich": false
+    },
+    "weitergehendeAnforderungen": {
+      "aktiv": true,
+      "label": "Weitergehende Anforderungen",
+      "hinweistext": "Hinweistext Weitergehende Anforderungen",
+      "erforderlich": true
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "gas": {
+    "aktiv": true,
+    "dateien": {
+      "plan": {
+        "label": "Lageplan",
+        "position": 1,
+        "singleFile": true,
+        "hinweistext": "Bitte laden Sie einen amtlichen Lageplan des Gebäudes im Maßstab 1:500 hoch.",
+        "erforderlich": true
+      },
+      "skizze": {
+        "label": "Grundrissskizze",
+        "position": 2,
+        "singleFile": true,
+        "hinweistext": "Bitte laden Sie einen Grundriss des Gebäudes hoch.",
+        "erforderlich": true
+      },
+      "zusatzdatei": {
+        "label": "Sonstige Dateien",
+        "position": 3,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": false
+      }
+    },
+    "vorgang": {
+      "vorgang": {
+        "aktiv": true,
+        "label": "Vorgang",
+        "optionen": [
+          {
+            "aktiv": false,
+            "label": "Ich möchte einen neuen Netzanschluss",
+            "hinweistext": null
+          },
+          {
+            "aktiv": true,
+            "label": "Zeitlich befristeter Netzanschluss",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Umlegung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Netzanschlussverstärkung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Stilllegung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Unterbrechung",
+            "hinweistext": "test"
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Trennung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": false,
+            "label": "Änderung eines bestehenden Netzanschlusses: Wiederinbetriebnahme",
+            "hinweistext": null
+          }
+        ],
+        "hinweistext": "HEYYY",
+        "erforderlich": true
+      },
+      "stilllegung": {
+        "aktiv": false,
+        "label": "Gewünschtes Datum der Stilllegung (optional)",
+        "hinweistext": null,
+        "validierung": [],
+        "erforderlich": false
+      },
+      "wiederinbetriebnahme": {
+        "aktiv": false,
+        "label": "Gewünschtes Datum der Wiederinbetriebnahme (optional)",
+        "hinweistext": null,
+        "validierung": [],
+        "erforderlich": true
+      },
+      "beschreibungUmlegevorhaben": {
+        "aktiv": false,
+        "label": "Kurze Beschreibung des Umlegevorhabens (optional)",
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "erhoehungNetzanschlusswert": {
+        "aktiv": false,
+        "label": "Erfolgt durch die Umlegung/Erneuerung eine Erhöhung des Netzanschlusswertes?",
+        "hinweistext": "test",
+        "erforderlich": true
+      },
+      "weiterfuehrendeInformationen": {
+        "aktiv": false,
+        "label": "Weiterführende Informationen (optional)",
+        "hinweistext": null,
+        "erforderlich": true
+      }
+    },
+    "gasgeraete": {
+      "aktiv": true,
+      "label": "Anzahl Gasgeräte (erforderlich)",
+      "hinweistext": null,
+      "platzhalter": null,
+      "validierung": [],
+      "erforderlich": false
+    },
+    "preisblatt": null,
+    "versorgung": {
+      "aktiv": true,
+      "label": "Art der Versorgung",
+      "optionen": [
+        {
+          "aktiv": false,
+          "label": "Vollversorgung"
+        },
+        {
+          "aktiv": true,
+          "label": "Reserveversorgung"
+        }
+      ],
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "frontlaenge": {
+      "aktiv": true,
+      "label": "Straßenfrontlänge [in Meter]",
+      "hinweistext": null,
+      "validierung": [
+        {
+          "regex": "^\\d+(,\\d{1,2})?$",
+          "errorMessage": "Bitte geben Sie eine Zahl mit maximal 2 Nachkommastellen ein."
+        }
+      ],
+      "erforderlich": true
+    },
+    "introduction": null,
+    "zusatzabfragen": [
+      {
+        "aktiv": true,
+        "label": "Zusatzinformation",
+        "header": "Optionale Zusatzabfrage",
+        "hinweistext": "Hinweistext gasZusatzinformation",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "verwendungszweck": {
+      "aktiv": false,
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "anschlussleistung": {
+      "aktiv": false,
+      "label": "Vorzuhaltende Anschlussleistung am Übergabepunkt in kW (erforderlich)",
+      "hinweistext": null,
+      "platzhalter": null,
+      "validierung": [],
+      "erforderlich": true
+    },
+    "fertigstellungstermin": {
+      "aktiv": false,
+      "label": "Gewünschter Fertigstellungstermin",
+      "hinweistext": null,
+      "validierung": [],
+      "erforderlich": false
+    },
+    "grundstuecksoberflaeche": {
+      "aktiv": true,
+      "label": "Grundstücksfläche [in qm]",
+      "hinweistext": null,
+      "validierung": [
+        {
+          "regex": "^\\d+(,\\d{1,2})?$",
+          "errorMessage": "Bitte geben Sie eine Zahl mit maximal 2 Nachkommastellen ein."
+        }
+      ],
+      "erforderlich": true
+    }
+  }
+}
