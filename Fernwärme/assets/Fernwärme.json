@@ -1,0 +1,285 @@
+{
+  "fernwaerme": {
+    "aktiv": true,
+    "dateien": {
+      "plan": {
+        "label": "Lageplan des Grundstücks",
+        "position": 1,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "skizze": {
+        "label": "Grundrissskizze des Gebäudes",
+        "position": 2,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "zusatzdatei": {
+        "label": "Skizze des Hausanschlussraums",
+        "position": 3,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": false
+      }
+    },
+    "vorgang": {
+      "vorgang": {
+        "aktiv": true,
+        "label": "Vorgang",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Ich möchte einen neuen Hausanschluss",
+            "hinweistext": "Hinweistext neuerHausanschluss"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Umlegung",
+            "hinweistext": "Hinweistext aenderungUmlegung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Hausanschlussverstärkung",
+            "hinweistext": "Hinweistext aenderungNetzanschlussverstaerkung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Reduzierung der Anschlussleistung",
+            "hinweistext": "Hinweistext aenderungReduzierung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Stilllegung",
+            "hinweistext": "Hinweistext aenderungStilllegung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Unterbrechung",
+            "hinweistext": "Hinweistext aenderungUnterbrechung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Trennung",
+            "hinweistext": "Hinweistext aenderungTrennung"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Wiederinbetriebnahme",
+            "hinweistext": "Hinweistext aenderungWiederinbetriebnahme"
+          },
+          {
+            "aktiv": true,
+            "label": "Änderung eines bestehenden Hausanschlusses: Beseitigung",
+            "hinweistext": "Hinweistext aenderungBeseitigung"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "stilllegung": {
+        "aktiv": true,
+        "label": "Gewünschtes Datum der Stilllegung (optional)",
+        "hinweistext": "Format: DD.MM.YYYY",
+        "validierung": [],
+        "erforderlich": false
+      },
+      "wiederinbetriebnahme": {
+        "aktiv": true,
+        "label": "Gewünschtes Datum der Wiederinbetriebnahme (optional)",
+        "hinweistext": "Format: DD.MM.YYYY",
+        "validierung": [],
+        "erforderlich": false
+      },
+      "beschreibungUmlegevorhaben": {
+        "aktiv": true,
+        "label": "Kurze Beschreibung des Umlegevorhabens (optional)",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "erhoehungNetzanschlusswert": {
+        "aktiv": true,
+        "label": "Erfolgt durch die Umlegung/Erneuerung eine Erhöhung des Netzanschlusswertes?",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "weiterfuehrendeInformationen": {
+        "aktiv": true,
+        "label": "Weiterführende Informationen (optional)",
+        "hinweistext": null,
+        "erforderlich": false
+      }
+    },
+    "lueftung": {
+      "aktiv": true,
+      "label": "Lüftung",
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "gewerblich": {
+      "aktiv": true,
+      "label": "Gewerbliche Wärmelieferung",
+      "hinweistext": "Hinweistext fernwaermeGewerblicheWaermelieferung",
+      "erforderlich": true
+    },
+    "preisblatt": null,
+    "frontlaenge": {
+      "aktiv": false,
+      "label": "Straßenfrontlänge [in Meter]",
+      "hinweistext": "Hinweistext straßenfrontlaenge",
+      "validierung": [
+        {
+          "regex": "^\\d+(,\\d{1,2})?$",
+          "errorMessage": "Bitte geben Sie eine Zahl mit maximal 2 Nachkommastellen ein."
+        }
+      ],
+      "erforderlich": false
+    },
+    "raumheizung": {
+      "aktiv": true,
+      "label": "Raumheizung",
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "introduction": null,
+    "volumenstrom": {
+      "aktiv": true,
+      "label": "Geben Sie bitte den Volumenstrom an.",
+      "hinweistext": "Hinweistext fernwaermeVolumenstrom",
+      "erforderlich": true
+    },
+    "zaehlernummer": {
+      "aktiv": true,
+      "label": "Zählernummer",
+      "hinweistext": "Hinweistext fernwaermeZaehlernummer",
+      "erforderlich": true
+    },
+    "zusatzabfragen": [
+      {
+        "aktiv": true,
+        "label": "Zusatzabfragen",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext fernwaermeZusatzinformation",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "eigenversorgung": {
+      "aktiv": true,
+      "label": "Eigenversorgung durch Gebäudeeigentümer",
+      "hinweistext": "Hinweistext fernwaermeEigenversorgungDurchGebaeudeeigentuemer",
+      "erforderlich": true
+    },
+    "anschlussleistung": {
+      "aktiv": true,
+      "label": "Vorzuhaltende Anschlussleistung am Übergabepunkt in kW (erforderlich)",
+      "hinweistext": "Hinweistext fernwaermeVorzuhaltendeAnschlussleistungAmUebergabepunkt",
+      "platzhalter": null,
+      "validierung": [],
+      "erforderlich": true
+    },
+    "smartMeterGateway": {
+      "aktiv": true,
+      "label": "Ist an der Übergabestelle bereits ein Smart-Meter-Gateway für den Messstellenbetrieb der Sparte Strom vorhanden?",
+      "hinweistext": "Hinweistext fernwaermeSmartMeterGateway",
+      "erforderlich": true
+    },
+    "vorlauftemperatur": {
+      "aktiv": true,
+      "label": "Vorlauftemperatur [Grad Celsius] (erforderlich)",
+      "hinweistext": "Hinweistext fernwaermeVorlauftemperatur",
+      "platzhalter": null,
+      "validierung": [],
+      "erforderlich": true
+    },
+    "nachweisBerechnung": {
+      "aktiv": true,
+      "label": "Nachweis der Berechnung",
+      "hinweistext": "Hinweistext fernwaermeNachweisBerechnung",
+      "erforderlich": true
+    },
+    "gebrauchswarmwasser": {
+      "aktiv": true,
+      "label": "Gebrauchswarmwasser",
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "hausanschlusslaenge": {
+      "aktiv": true,
+      "label": "Hausanschlusslänge [in Meter]",
+      "hinweistext": "Hinweistext fernwaermeHausanschlusslaenge",
+      "erforderlich": true
+    },
+    "ruecklauftemperatur": {
+      "aktiv": true,
+      "label": "Die Rücklauftemperatur wird von Energieversorger vorgegeben und beträgt xx° C.",
+      "hinweistext": "Hinweistext fernwaermeRuecklauftemperatur"
+    },
+    "contractingFernwaerme": {
+      "aktiv": true,
+      "label": "Eine dieser Optionen muss ausgewählt werden",
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "fertigstellungstermin": {
+      "aktiv": true,
+      "label": "Gewünschter Fertigstellungstermin",
+      "hinweistext": "Hinweistext gewuenschterFertigstellungstermin",
+      "validierung": [],
+      "erforderlich": false
+    },
+    "grundstuecksoberflaeche": {
+      "aktiv": false,
+      "label": "Grundstücksfläche [in qm]",
+      "hinweistext": "Hinweistext grundstuecksflaeche",
+      "validierung": [
+        {
+          "regex": "^\\d+(,\\d{1,2})?$",
+          "errorMessage": "Bitte geben Sie eine Zahl mit maximal 2 Nachkommastellen ein."
+        }
+      ],
+      "erforderlich": false
+    },
+    "gewuenschterLieferbeginn": {
+      "aktiv": true,
+      "label": "Gewünschter Lieferbeginn",
+      "hinweistext": "Hinweistext fernwaermeGewuenschterLieferbeginn",
+      "validierung": [],
+      "erforderlich": true
+    },
+    "bisherigeWaermeversorgung": {
+      "aktiv": true,
+      "label": "Bisherige Wärmeversorgung des Gebäudes",
+      "hinweistext": "Hinweistext fernwaermeBisherigeWaermeversorgungDesGebaeudes",
+      "erforderlich": true
+    },
+    "lueftungAnschlussleistung": {
+      "aktiv": true,
+      "label": "Anschlussleistung (in kW)",
+      "hinweistext": "Hinweistext fernwaermeLueftungAnschlussleistung",
+      "validierung": [],
+      "erforderlich": true
+    },
+    "vertraglicherAnschlusswert": {
+      "aktiv": true,
+      "label": "in kW",
+      "hinweistext": "Hinweistext fernwaermeVertraglicherAnschlusswert",
+      "erforderlich": true
+    },
+    "raumheizungAnschlussleistung": {
+      "aktiv": true,
+      "label": "Anschlussleistung (in kW)",
+      "hinweistext": "Hinweistext fernwaermeRaumheizungAnschlussleistung",
+      "erforderlich": true
+    },
+    "gebrauchswarmwasserAnschlussleistung": {
+      "aktiv": true,
+      "label": "Anschlussleistung (in kW)",
+      "hinweistext": "Hinweistext fernwaermeGebrauchswarmwasserAnschlussleistung",
+      "erforderlich": true
+    },
+    "informationstextVertraglicherAnschlusswert": "Geben Sie bitte den von Ihrem Installateur errechneten vertraglichen Anschlusswert an und laden den erforderlichen Nachweis der Berechnung hoch."
+  }
+}

@@ -30,12 +30,12 @@
         "label": "Vorgang",
         "optionen": [
           {
-            "aktiv": false,
+            "aktiv": true,
             "label": "Ich möchte einen neuen Netzanschluss",
             "hinweistext": "TEST"
           },
           {
-            "aktiv": false,
+            "aktiv": true,
             "label": "Zeitlich befristeter Netzanschluss",
             "hinweistext": "DAMN DANIEL"
           },
@@ -212,7 +212,7 @@
     "grundstuecksoberflaeche": {
       "aktiv": false,
       "label": "Grundstücksfläche [in qm]",
-      "hinweistext": null,
+      "hinweistext": "TEST",
       "validierung": [
         {
           "regex": "^\\d+(,\\d{1,2})?$",

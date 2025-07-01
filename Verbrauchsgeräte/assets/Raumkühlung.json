@@ -1,0 +1,437 @@
+{
+  "raumkuehlung": {
+    "agb": {
+      "link": {
+        "url": null
+      },
+      "aktiv": true,
+      "label": "AGB",
+      "hinweistext": "Hinweistext AGB",
+      "erforderlich": true
+    },
+    "aktiv": true,
+    "dateien": {
+      "heading": "Dokumente",
+      "lageplan": {
+        "aktiv": true,
+        "label": "Lageplan",
+        "position": 1,
+        "hinweistext": "Hinweistext verbrauchsgeraeteRaumkuehlungDateienLageplan",
+        "erforderlich": true
+      },
+      "datenblatt": {
+        "aktiv": true,
+        "label": "Datenblatt",
+        "position": 2,
+        "hinweistext": "Hinweistext verbrauchsgeraeteRaumkuehlungDateienDatenblatt",
+        "erforderlich": true
+      },
+      "zusatzdatei": {
+        "label": "Zusatzfeld Upload",
+        "position": 3,
+        "singleFile": true,
+        "hinweistext": "Hinweistext verbrauchsgeraeteRaumkuehlungDateienZusatzdatei",
+        "erforderlich": false
+      }
+    },
+    "vorgang": {
+      "vorgang": {
+        "aktiv": true,
+        "label": "Vorgang",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Anmeldung",
+            "hinweistext": "Hinweistext anmeldung"
+          },
+          {
+            "aktiv": true,
+            "label": "Anlagen- und Anschlussveränderung",
+            "hinweistext": "Hinweistext veraenderung"
+          },
+          {
+            "aktiv": true,
+            "label": "Stilllegung",
+            "hinweistext": "Hinweistext stilllegung"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraetVorgang",
+        "erforderlich": true,
+        "heading": "Angaben zum Vorgang"
+      },
+      "datenblatt": {
+        "aktiv": false,
+        "label": "Datenblatt",
+        "hinweistext": "Hinweistext verbrauchsgeraetDatenblatt",
+        "erforderlich": true
+      },
+      "datumTechnischeInbetriebnahme": {
+        "aktiv": true,
+        "label": "Datum der (geplanten) technischen Inbetriebsetzug",
+        "hinweistext": "Hinweistext verbrauchsgeraetDatumTechnischeInbetriebnahme",
+        "validierung": [
+          {
+            "regex": "^(0[1-9]|1\\d|2\\d|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$",
+            "errorMessage": "Bitte geben Sie ein gültiges Datum im Format DD.MM.YYYY ein."
+          }
+        ],
+        "erforderlich": true
+      },
+      "datumTechnischeAuserbetriebnahme": {
+        "aktiv": true,
+        "label": "Datum der technischen Außerbetriebsetzung",
+        "hinweistext": "Hinweistext verbrauchsgeraetDatumTechnischeAuserbetriebnahme",
+        "validierung": [
+          {
+            "regex": "^(0[1-9]|1\\d|2\\d|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$",
+            "errorMessage": "Bitte geben Sie ein gültiges Datum im Format DD.MM.YYYY ein."
+          }
+        ],
+        "erforderlich": true
+      }
+    },
+    "introduction": "Einleitung zu Klimaanlage",
+    "anzahlAnlagenDieserArt": {
+      "aktiv": true,
+      "label": "Anzahl",
+      "hinweistext": "Hinweistext anzahlAnlagenDieserArt",
+      "erforderlich": true
+    },
+    "maximalerLeistungsbezug": {
+      "aktiv": true,
+      "label": "Maximaler Leistungsbezug",
+      "hinweistext": "Hinweistext verbrauchsgeraetMaximalerLeistungsbezug",
+      "validierung": [
+        {
+          "regex": "^-?\\d+(\\,\\d+)?$",
+          "errorMessage": "Bitte geben Sie eine Nummer ein."
+        }
+      ],
+      "erforderlich": true
+    },
+    "mehrereAnlagenDieserArt": {
+      "aktiv": true,
+      "label": "Befinden sich hinter dem Netzanschluss mehrere Anlagen dieser Art?",
+      "hinweistext": "Hinweistext mehrereAnlagenDieserArt",
+      "erforderlich": true
+    },
+    "individuelleVereinbarung": {
+      "aktiv": true,
+      "label": "Ist für die Verbrauchseinrichtung vor dem 31.12.2023 eine individuelle Vereinbarung nach § 14a EnWG abgeschlossen worden?",
+      "hinweistext": "Hinweistext verbrauchsgeraetIndividuelleVereinbarung",
+      "erforderlich": true
+    },
+    "wechselFreiwilligeSteuerbarkeit": {
+      "aktiv": true,
+      "label": "Ist trotz Bestandsschutzes ein Wechsel in die freiwillige Steuerbarkeit gewünscht?",
+      "hinweistext": "Hinweistext verbrauchsgeraetWechselFreiwilligeSteuerbarkeit",
+      "erforderlich": true
+    },
+    "summeNetzanschlussleistungVorhandenerAnlagen": {
+      "aktiv": true,
+      "label": "Summe der Netzanschlussleistung aller vorhandenen Anlagen (ohne neue Anlage) in kW",
+      "hinweistext": "Hinweistext summeNetzanschlussleistungVorhandenerAnlagen",
+      "validierung": [
+        {
+          "regex": "^-?\\d+(\\,\\d+)?$",
+          "errorMessage": "Bitte geben Sie eine Nummer ein."
+        }
+      ],
+      "erforderlich": true
+    },
+    "geraete": {
+      "typ": {
+        "aktiv": true,
+        "label": "Typ der Klimaanlage",
+        "hinweistext": "Wählen Sie den Typ der Klimaanlage aus.",
+        "erforderlich": true
+      },
+      "anzahl": {
+        "aktiv": true,
+        "label": "Anzahl baugleicher Klimaanlagen",
+        "hinweistext": "Tragen Sie die Anzahl der baugleichen Klimaanlagen ein. Eine Klimaanlage ist eine Einrichtung zur Raumkühlung in Wohn-, Büro- oder Aufenthaltsräumen.",
+        "validierung": [
+          {
+            "regex": "^\\d+$",
+            "errorMessage": "Es sind nur Zahlen erlaubt."
+          }
+        ],
+        "erforderlich": true
+      },
+      "heading": "Angaben zum Gerät",
+      "leistung": {
+        "aktiv": true,
+        "label": "Elektrische Leistung der Klimaanlage in kW",
+        "hinweistext": "Tragen Sie den Wert für die elektrische Leistung der Klimaanlage ein.",
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ],
+        "erforderlich": true
+      },
+      "hersteller": {
+        "aktiv": true,
+        "label": "Hersteller der Klimaanlage",
+        "hinweistext": "Wählen Sie den Hersteller der Klimaanlage aus.",
+        "erforderlich": true
+      },
+      "gesamtleistung": {
+        "aktiv": true,
+        "label": "Gesamtleistung der Klimaanlage(n) in kW",
+        "hinweistext": "Hinweistext verbrauchsgeraetGesamtleistungKlimaanlagen",
+        "erforderlich": true
+      },
+      "maxAnlaufstrom": {
+        "aktiv": true,
+        "label": "Maximaler Anlaufstrom der Klimaanlage in Ampere (A)",
+        "hinweistext": "Geben Sie den maximalen Anlaufstrom der Klimaanlage in Ampere (A) an.",
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ],
+        "erforderlich": true
+      },
+      "maxNetzbezugsleistung": {
+        "aktiv": true,
+        "label": "Maximale Netzbezugsleistung der Klimaanlage in kW",
+        "hinweistext": "Tragen Sie den Wert für die maximale Netzeinspeiseleistung der Wärmepumpe am Netzanschlusspunkt in Kilowatt (kW) ein.",
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ],
+        "erforderlich": true
+      }
+    },
+    "kundenanlage": {
+      "heading": "Angaben zur Kundenanlage",
+      "messkonzept": {
+        "text": "Wählen Sie bitte das Mess- und Betriebskonzept der Anlage aus.",
+        "aktiv": true,
+        "label": "Messkonzept",
+        "links": [
+          {
+            "url": null,
+            "label": "Messkonzept 1"
+          },
+          {
+            "url": null,
+            "label": "Messkonzept 2"
+          },
+          {
+            "url": null,
+            "label": "Messkonzept 3"
+          }
+        ],
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Messkonzept 1"
+          },
+          {
+            "aktiv": true,
+            "label": "Messkonzept 2"
+          },
+          {
+            "aktiv": true,
+            "label": "Messkonzept 3"
+          },
+          {
+            "aktiv": true,
+            "label": "Abweichendes Messkonzept"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraeteRaumkuehlungMesskonzept",
+        "erforderlich": true
+      },
+      "lastmanagement": {
+        "text": "Wählen Sie aus, ob das Gerät über ein Lastmanagement gespeichert wird und wenn ja, wie die Steuerung erfolgt.",
+        "aktiv": true,
+        "label": "Ist in der Anlage ein Lastmanagementsystem vorhanden?",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Nein"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja (dynamisch)"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja (statisch)"
+          }
+        ],
+        "hinweistext": "Wählen Sie aus, ob der Speicher über ein Lastmanagement gesteuert wird und wenn ja wie.",
+        "erforderlich": true
+      },
+      "zusatzabfragen": [
+        {
+          "aktiv": true,
+          "label": "Zusatzabfragen Klimaanlage",
+          "header": null,
+          "hinweistext": "Hinweistext verbrauchsgeratZusatzabfrage",
+          "platzhalter": null,
+          "validierung": [],
+          "erforderlich": false
+        }
+      ],
+      "nutzenderZaehler": {
+        "aktiv": true,
+        "label": "Ist bereits ein zu nutzender Zähler vorhanden?",
+        "hinweistext": "Wählen Sie aus, ob ein zu nutzender Zähler bereits vorhanden ist.",
+        "erforderlich": true
+      },
+      "separaterZaehler": {
+        "aktiv": true,
+        "label": "Soll die Messung über einen separaten Zähler erfolgen?",
+        "hinweistext": "Wählen Sie aus, ob die Messung über einen separaten Zähler erfolgen soll.",
+        "erforderlich": true
+      },
+      "angabeZaehlernummer": {
+        "aktiv": true,
+        "label": "Angabe der Zählernummer des vorhandenen Zählers",
+        "hinweistext": "Tragen Sie die Zählernummer des Stromzählers ein. Hinweis: Zählernummer ist auf jeder Stromrechnung angegeben oder kann auf der Vorderseite des Stromzählers abgelesen werden.",
+        "erforderlich": true
+      },
+      "abweichendesMesskonzept": {
+        "aktiv": true,
+        "label": "Abweichendes Mess- und Betriebskonzept",
+        "hinweistext": "Hinweistext verbrauchsgeraetMessUndBetriebskonzept",
+        "erforderlich": true
+      },
+      "betriebsnotwendigeZwecke": {
+        "aktiv": true,
+        "label": "Wird die Klimaanlage für betriebsnotwendige Zwecke oder in einer kritischen Infrastruktur eingesetzt?",
+        "hinweistext": "Geben Sie an, ob die Anlage für betriebsnotwendige Zecke oder in kritischer Infrastruktur eingesetzt wird. \nHinweis: Bei Einsatz für betriebsnotwendige Zwecke oder in kritischer Infrastruktur ist keine Steuerung nach § 14a EnWG erforderlich.",
+        "erforderlich": true
+      },
+      "benoetigteHausanschlusssicherung": {
+        "aktiv": true,
+        "label": "Benötigte Hausanschlusssicherung in Ampere (A)",
+        "hinweistext": "Hinweistext verbrauchsgeraetBenötigteHausanschlusssicherung",
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ],
+        "erforderlich": true
+      },
+      "leistungserhoehungHausanschlusssicherung": {
+        "aktiv": true,
+        "label": "Wird eine Leistungserhöhung der Hausanschlusssicherung benötigt?",
+        "hinweistext": "Hinweistext verbrauchsgeraetLeistungserhöhungHausanschlusssicherung",
+        "erforderlich": true
+      }
+    },
+    "steuerung": {
+      "heading": "Angaben zur Steuerung",
+      "hersteller": {
+        "text": "Wählen Sie aus, wer für die Herstellung der Steuerbarkeit beauftragt wird.",
+        "aktiv": true,
+        "label": "Herstellung der Steuerbarkeit",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Grundzuständigen Messstellenbetreiber"
+          },
+          {
+            "aktiv": true,
+            "label": "Wettbewerblicher Messstellenbetreiber"
+          },
+          {
+            "aktiv": true,
+            "label": "Netzbetreiber"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraetWerStelltSteuerbarkeitHer",
+        "erforderlich": true
+      },
+      "steuerungsart": {
+        "text": "Wählen Sie aus, wie die Steuerung umgesetzt wird.",
+        "aktiv": true,
+        "label": "Steuerungsart",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Direkt"
+          },
+          {
+            "aktiv": true,
+            "label": "Energiemanagementsystem"
+          }
+        ],
+        "hinweistext": "Wählen Sie aus, wie die Steuerung umgesetzt wird. Die Steuerungsaufgabe wird durch die technischen Eigenschaften der steuerbaren Einrichtung bestimmt, welche durch den Anlagenbetreiber oder dessen Elektroinstallateur bei der Anmeldung angegeben werden müssen. Der Netzbetreiber teilt dem zuständigen Messtellenbetreiber die Steuerungsaufgaben mit. Der Messtellenbetreiber überführt diese Steuerungsaufgaben in ein Steuerungskonzept, wählt die Technik aus und montiert diese beim Anlagenbetreiber.",
+        "erforderlich": true
+      },
+      "messstellenbetreiber": {
+        "aktiv": true,
+        "label": "Angabe des wettbewerblichen Messstellenbetreibers",
+        "hinweistext": "Hinweistext verbrauchsgeraetwettbewerlichermessstellenbetreiber",
+        "erforderlich": true
+      },
+      "handeltBestandsanlage": {
+        "text": "Handelt es sich um eine Bestandsanlage vor dem 01.01.2024?",
+        "aktiv": true,
+        "label": "Bestandsanlage vor dem 01.01.2024",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Ja (Anlage ohne Steuerung § 14a alte Fassung)"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja (Anlage mit Steuerung §14a  alte Fassung)"
+          },
+          {
+            "aktiv": true,
+            "label": "Nein"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraetBestandsanlage",
+        "erforderlich": true
+      },
+      "netzentgeltreduzierung": {
+        "text": "Wählen Sie  aus, welches Modul der Netzentgeldreduzierung nach § 14a EnWG Sie anwenden möchten.",
+        "aktiv": true,
+        "label": "Netzentgeldmodul nach § 14a EnWG",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Modul 1: Pauschale Reduzierung der Netzentgelte"
+          },
+          {
+            "aktiv": true,
+            "label": "Modul 2: Prozentuale Reduzierung des Arbeitspreises"
+          }
+        ],
+        "hinweistext": "Wählen Sie das Netzentgeltmodul aus. Es gibt verschiedene Module zur Entgeltreduzierung. Einem netzbetreiberindividuellen pauschalen Betrag (Modul 1) oder einer prozentualen Reduzierung des Arbeitspreises (Modul 2). Der Betreiber der steuerbaren Verbrauchseinrichtung kann zwischen Modul 1 und 2 auswählen. Hinweis: Bei Modul 2 wird ein seperater Zähler benötigt.",
+        "erforderlich": true
+      },
+      "wechselFreiwilligeSteuerbarkeit": {
+        "aktiv": true,
+        "label": "Ist trotz Bestandsschutzes ein Wechsel in die freiwillige Steuerbarkeit gewünscht?",
+        "hinweistext": "Hinweistext verbrauchsgeraetWechselFreiwilligeSteuerbarkeit",
+        "erforderlich": true
+      }
+    },
+    "zusatzabfragen": [
+      {
+        "aktiv": true,
+        "label": "Zusatzinformation",
+        "links": [],
+        "header": "Zusatzabfrage Raumkühlung",
+        "hinweistext": "Hinweistext verbrauchsgeraeteRaumkuehlungZusatzabfrage",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ]
+  }
+}

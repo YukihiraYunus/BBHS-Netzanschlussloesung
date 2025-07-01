@@ -12,24 +12,24 @@ def run():
         "Änderung eines bestehenden Netzanschlusses: Unterbrechung": ("vorgang", "vorgang", "optionen", "Änderung eines bestehenden Netzanschlusses: Unterbrechung"),
         "Änderung eines bestehenden Netzanschlusses: Trennung": ("vorgang", "vorgang", "optionen", "Änderung eines bestehenden Netzanschlusses: Trennung"),
         "Änderung eines bestehenden Netzanschlusses: Wiederinbetriebnahme": ("vorgang", "vorgang", "optionen", "Änderung eines bestehenden Netzanschlusses: Wiederinbetriebnahme"),
-        "Spitzendurchfluss (ohne Löschwasser) in l/s": ("spitzendurchfluss"),
-        "Voraussichtliche Bedarfsmenge in m³/h": ("bedarfsmenge"),
-        "Straßenfrontlänge (in Meter)": ("frontlaenge"),
-        "Grundstücksfläche ( in qm)": ("grundstuecksoberflaeche"),
-        "Hausanschlusslänge (in Meter)": ("hausanschlusslaenge"),
-        "gew. Fertigstellungstermin": ("fertigstellungstermin"),
+        "Spitzendurchfluss (ohne Löschwasser) in l/s": ("spitzendurchfluss",),
+        "Voraussichtliche Bedarfsmenge in m³/h": ("bedarfsmenge",),
+        "Straßenfrontlänge (in Meter)": ("frontlaenge",),
+        "Grundstücksfläche ( in qm)": ("grundstuecksoberflaeche",),
+        "Hausanschlusslänge (in Meter)": ("hausanschlusslaenge",),
+        "gew. Fertigstellungstermin": ("fertigstellungstermin",),
         "Erfolgt durch die Umlegung/Erneuerung eine Erhöhung des Netzanschlusswertes (Bei Vorgang Umlegung)": ("vorgang", "erhoehungNetzanschlusswert"),
         "Beschreibung Umlegevorhaben (Bei Vorgang Umlegung)": ("vorgang", "beschreibungUmlegevorhaben"),
         "Gewünschtes Datum der Stillegung (Bei Vorgang Stillegung)": ("vorgang", "stilllegung"),
         "Weiterführende Informationen (Bei Vorgang Stilllegung, Unterbrechung, Trennung": ("vorgang", "weiterfuehrendeInformationen"),
         "Gewünschtes Datum der Wiederinbetriebnahme (Bei Vorgang Wiederinbetriebnahme)": ("vorgang", "wiederinbetriebnahme"),
-        "Zählerstand (in kWh)": ("zaehlerstand"),
-        "Zählernummer": ("zaehlernummer"),
-        "Zusätzliche Einrichtungen mit besonderem Wasserbedarf vorhanden?": ("einrichtungenVorhanden"),
-        "Art der Einrichtung": ("artDerEinrichtung"),
-        "Bedarf der Einrichtung (in m³/s)": ("bedarfEinrichtung"),
-        "Eigenwasserversorgung vorhanden oder geplant?": ("eigenwasserversorgung"),
-        "Bauwassersäule (Checkbox)": ("bewaesserungssaeule"),
+        "Zählerstand (in kWh)": ("zaehlerstand",),
+        "Zählernummer": ("zaehlernummer",),
+        "Zusätzliche Einrichtungen mit besonderem Wasserbedarf vorhanden?": ("einrichtungenVorhanden",),
+        "Art der Einrichtung": ("artDerEinrichtung",),
+        "Bedarf der Einrichtung (in m³/s)": ("bedarfEinrichtung",),
+        "Eigenwasserversorgung vorhanden oder geplant?": ("eigenwasserversorgung",),
+        "Bauwassersäule (Checkbox)": ("bewaesserungssaeule",),
         "Weitergehende Anforderungen": ("wasser", "weitergehendeAnforderungen"),
         "Lageplan": ("wasser", "dateien", "plan"),
         "Grundrissskizze": ("wasser", "dateien", "skizze"),
@@ -50,40 +50,60 @@ def run():
     # === 4. Update Funktion ===
     def update_json(data, key_path, status_value=None, required_value=None, hint_text=None):
         container = data
+
+        # Fall: einfacher Schlüssel (keine Schachtelung)
         if isinstance(key_path, str):
             if key_path in container and isinstance(container[key_path], dict):
-                if status_value is not None:
+                if status_value is not None and "aktiv" in container[key_path]:
                     container[key_path]["aktiv"] = status_value
                 if required_value is not None and "erforderlich" in container[key_path]:
                     container[key_path]["erforderlich"] = required_value
-                # Hier: Hinweistext immer setzen, auch wenn es noch nicht existiert
-                if hint_text is not None or hint_text is None:
+                if hint_text is not None and "hinweistext" in container[key_path]:
                     container[key_path]["hinweistext"] = hint_text
-            return
+            else:
+                print(f"⚠️ Schlüssel '{key_path}' nicht im JSON gefunden oder keine dict-Struktur.")
+                return
 
+        # Sonst: durch das Pfad-Tuple durchiterieren
         for key in key_path[:-1]:
-            container = container.get(key, {})
+            if key not in container:
+                print(f"⚠️ Pfadbestandteil '{key}' fehlt im Pfad {key_path}")
+                return
+            container = container[key]
+            if not isinstance(container, (dict, list)):
+                print(f"⚠️ Strukturfehler bei '{key}' im Pfad {key_path} (nicht dict oder list)")
+                return
+
         last_key = key_path[-1]
 
+        # Fall: letzte Ebene ist Liste von dicts → Suche nach label
         if isinstance(container, list):
+            found = False
             for item in container:
                 if item.get("label", "").strip().lower() == last_key.strip().lower():
-                    if status_value is not None:
+                    if status_value is not None and "aktiv" in item:
                         item["aktiv"] = status_value
                     if required_value is not None and "erforderlich" in item:
                         item["erforderlich"] = required_value
-                    if hint_text is not None or hint_text is None:
+                    if "hinweistext" in item:
                         item["hinweistext"] = hint_text
-                    return
+                    found = True
+                    break
+            if not found:
+                print(f"⚠️ Kein Listeneintrag mit label='{last_key}' gefunden im Pfad {key_path}")
+
+        # Fall: letzte Ebene ist dict → direkter Zugriff
         elif isinstance(container, dict):
             entry = container.get(last_key)
             if isinstance(entry, dict):
-                if status_value is not None:
+                if status_value is not None and "aktiv" in entry:
                     entry["aktiv"] = status_value
                 if required_value is not None and "erforderlich" in entry:
                     entry["erforderlich"] = required_value
-                if hint_text is not None or hint_text is None:
+                if "hinweistext" in entry:
                     entry["hinweistext"] = hint_text
+            else:
+                print(f"⚠️ '{last_key}' in {key_path} nicht gefunden oder keine dict-Struktur.")
 
 
     # === 5. Anwenden des Mappings ===
