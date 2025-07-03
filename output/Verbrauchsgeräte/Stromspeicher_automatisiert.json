@@ -1,0 +1,574 @@
+{
+  "stromspeicher": {
+    "agb": {
+      "link": {
+        "url": null
+      },
+      "aktiv": true,
+      "label": "AGB",
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "aktiv": true,
+    "dateien": {
+      "heading": "Dokumente",
+      "lageplan": {
+        "label": "Lageplan",
+        "position": 1,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "datenblatt": {
+        "label": "Datenblatt",
+        "position": 2,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "text": "Laden Sie bitte hier die benötigten Dokumente hoch."
+    },
+    "vorgang": {
+      "vorgang": {
+        "aktiv": true,
+        "label": "Vorgang",
+        "heading": "Angaben zum Vorgang",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Anmeldung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": true,
+            "label": "Anlagen- und Anschlussveränderung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": true,
+            "label": "Stilllegung",
+            "hinweistext": null
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "datenblatt": {
+        "aktiv": false,
+        "label": "Datenblatt",
+        "hinweistext": "Hinweistext verbrauchsgeraetDatenblatt",
+        "erforderlich": true
+      },
+      "datumTechnischeInbetriebnahme": {
+        "aktiv": true,
+        "label": "Datum der (geplanten) technischen Inbetriebsetzung",
+        "hinweistext": null,
+        "validierung": [
+          {
+            "regex": "^(0[1-9]|1\\d|2\\d|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$",
+            "errorMessage": "Bitte geben Sie ein gültiges Datum im Format DD.MM.YYYY ein."
+          }
+        ],
+        "erforderlich": true
+      },
+      "datumTechnischeAuserbetriebnahme": {
+        "aktiv": true,
+        "label": "Datum der technischen Außerbetriebsetzung",
+        "hinweistext": null,
+        "validierung": [
+          {
+            "regex": "^(0[1-9]|1\\d|2\\d|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$",
+            "errorMessage": "Bitte geben Sie ein gültiges Datum im Format DD.MM.YYYY ein."
+          }
+        ],
+        "erforderlich": false
+      }
+    },
+    "messkonzept": {
+      "messkonzept": {
+        "text": "Wählen Sie bitte das Mess- und Betriebskonzept der Anlage aus.",
+        "aktiv": true,
+        "label": "Wählen Sie bitte ein Messkonzept aus",
+        "links": [
+          {
+            "url": null,
+            "label": "Messkonzept 1"
+          },
+          {
+            "url": null,
+            "label": "Messkonzept 2"
+          },
+          {
+            "url": null,
+            "label": "Messkonzept 3"
+          }
+        ],
+        "heading": "Angaben zur Kundenanlage",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Messkonzept 1"
+          },
+          {
+            "aktiv": true,
+            "label": "Messkonzept 2"
+          },
+          {
+            "aktiv": true,
+            "label": "Messkonzept 3"
+          },
+          {
+            "aktiv": true,
+            "label": "Abweichendes Messkonzept"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "zaehlernummer": {
+        "aktiv": true,
+        "label": "Angabe der Zählernummer des vorhandenen Zählers",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "lastmanagement": {
+        "text": "Wählen Sie aus, ob das Gerät über ein Lastmanagement gesteuert wird und wenn ja, wie die Steuerung erfolgt.",
+        "aktiv": true,
+        "label": "Ist in der Anlage ein Lastmanagementsystem vorhanden?",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Nein"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja (dynamisch)"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja (statisch)"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "nutzenderZaehler": {
+        "aktiv": true,
+        "label": "Ist bereits ein zu nutzender Zähler vorhanden?",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "separaterZaehler": {
+        "aktiv": false,
+        "label": "Soll die Verbrauchseinrichtung unter einem separaten Zähler angeschlossen werden?",
+        "hinweistext": "Hinweistext SeparaterZaehler",
+        "erforderlich": true
+      },
+      "angabeZaehlernummer": {
+        "aktiv": true,
+        "label": "Angabe der Zählernummer des vorhandenen Zählers",
+        "hinweistext": "Hinweistext zaehlernummerVorhandenerZaehler",
+        "erforderlich": true
+      },
+      "messBetriebskonzept": {
+        "aktiv": true,
+        "label": "Abweichendes Mess- und Betriebskonzept",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "steuerbareWirkleistung": {
+        "text": "Ist die Wirkleistung netzorientiert steuerbar?",
+        "aktiv": false,
+        "label": "Netzorientiert steuerbare Wirkleistung",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Ja, Einzelsteuerung als steuVE"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja, Steuerung über EMS"
+          },
+          {
+            "aktiv": true,
+            "label": "Nein"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraetSteuerungLastmanagementsystem",
+        "erforderlich": true
+      },
+      "intelligentesMesssystem": {
+        "aktiv": false,
+        "label": "Ist die Verbrauchseinrichtung mit einem intelligenten Messsystem ausgestattet?",
+        "hinweistext": "Hinweistext intelligentesMesssystem",
+        "erforderlich": true
+      },
+      "separatenZaehlerErfolgen": {
+        "aktiv": true,
+        "label": "Soll die Messung über einen separaten Zähler erfolgen?",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "bereitstellungBestellformular": {
+        "link": {
+          "url": null,
+          "label": "Link Bestellformular"
+        },
+        "aktiv": false,
+        "label": "Bereitstellung Bestellformular",
+        "hinweistext": null,
+        "erforderlich": true
+      }
+    },
+    "introduction": "Einleitung zu Stromspeicher",
+    "angebenGeraet": {
+      "aktiv": true,
+      "heading": "Angaben zum Gerät",
+      "erforderlich": true,
+      "typWechselrichter": {
+        "aktiv": true,
+        "label": "Typ des Wechselrichters der Speichereinheit",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "nettokapazitaetKWh": {
+        "aktiv": true,
+        "label": "Nettokapazität der Speichereinheit in kWh",
+        "hinweistext": null,
+        "erforderlich": false,
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ]
+      },
+      "bruttokapazitaetKWh": {
+        "aktiv": true,
+        "label": "Bruttokapazität der Speichereinheit in kWh",
+        "hinweistext": null,
+        "erforderlich": false,
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ]
+      },
+      "zerezRegisternummer": {
+        "aktiv": true,
+        "label": "ZEREZ-Registernummer",
+        "hinweistext": null,
+        "erforderlich": false,
+        "validierung": [
+          {
+            "regex": "^[a-zA-Z0-9-]*$",
+            "errorMessage": "Es dürfen nur Buchstaben, Zahlen und Bindestriche verwendet werden."
+          },
+          {
+            "regex": "^.{15}$|^.{17}$",
+            "errorMessage": "Es müssen exakt 15 oder 17 Zeichen eingegeben werden."
+          }
+        ]
+      },
+      "phasenSpeichereinheit": {
+        "aktiv": true,
+        "heading": "Wählen Sie aus, an welche Phasen die Speichereinheit angeschlossen wurde. (Mehrfachauswahl möglich)",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "L1"
+          },
+          {
+            "aktiv": true,
+            "label": "L2"
+          },
+          {
+            "aktiv": true,
+            "label": "L3"
+          },
+          {
+            "aktiv": true,
+            "label": "Drehstrom"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "maximaleLadeleistungKW": {
+        "aktiv": true,
+        "label": "Maximale Ladeleistung (Netzbezugsleistung) der Speichereinheit in kW",
+        "hinweistext": null,
+        "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ]
+      },
+      "maximaleScheinleistung": {
+        "aktiv": true,
+        "label": "Maximale Scheinleistung des Wechselrichters der Speichereinheit in kVA",
+        "hinweistext": null,
+        "erforderlich": false,
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ]
+      },
+      "anzahlSpeichereinheiten": {
+        "aktiv": true,
+        "label": "Anzahl der Speichereinheiten dieses Typs",
+        "hinweistext": null,
+        "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+$",
+            "errorMessage": "Es sind nur Zahlen erlaubt."
+          }
+        ]
+      },
+      "herstellerWechselrichter": {
+        "aktiv": true,
+        "label": "Hersteller des Wechselrichters der Speichereinheit",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "maximaleEntladeleistungKW": {
+        "aktiv": true,
+        "label": "Maximale Entladeleistung (Netzeinspeiseleistung) der Speichereinheit in kW",
+        "hinweistext": null,
+        "erforderlich": false,
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ]
+      },
+      "einheitenzertifikatWechselrichters": {
+        "aktiv": true,
+        "label": "Einheitenzertifikat des Wechselrichters der Speichereinheit",
+        "hinweistext": null,
+        "erforderlich": false
+      }
+    },
+    "angabenSteuerung": {
+      "aktiv": true,
+      "heading": "Angaben zur Steuerung",
+      "erforderlich": true,
+      "steuerungsart": {
+        "text": "Wählen Sie aus, wie die Steuerung umgesetzt wird.",
+        "aktiv": true,
+        "label": "Steuerungsart",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Direkt"
+          },
+          {
+            "aktiv": true,
+            "label": "Energiemanagementsystem"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "messstellenbetreiber": {
+        "aktiv": true,
+        "label": "Angabe des wettbewerblichen Messstellenbetreibers",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "netzentgeltreduzierung": {
+        "text": "Wählen Sie  aus, welches Modul der Netzentgeldreduzierung nach § 14a EnWG Sie anwenden möchten.",
+        "aktiv": true,
+        "label": "Netzentgeltreduzierung",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Modul 1: Pauschale Reduzierung der Netzentgelte"
+          },
+          {
+            "aktiv": true,
+            "label": "Modul 2: Prozentuale Reduzierung des Arbeitspreises"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "herstellungSteuerbarkeit": {
+        "text": "Wählen Sie aus, wer für die Herstellung der Steuerbarkeit beauftragt wird.",
+        "aktiv": true,
+        "label": "Herstellung der Steuerbarkeit durch",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Grundzuständigen Messstellenbetreiber"
+          },
+          {
+            "aktiv": true,
+            "label": "Wettbewerblicher Messstellenbetreiber"
+          },
+          {
+            "aktiv": true,
+            "label": "Netzbetreiber"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "individuelleVereinbarung": {
+        "text": "Handelt es sich um eine Bestandsanlage vor dem 01.01.2024?",
+        "aktiv": true,
+        "label": "Bestandsanlage vor dem 01.01.2024",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Ja (Anlage ohne Steuerung § 14a alte Fassung)"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja (Anlage mit Steuerung §14a  alte Fassung)"
+          },
+          {
+            "aktiv": true,
+            "label": "Nein"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "wechselFreiwilligeSteuerbarkeit": {
+        "aktiv": true,
+        "label": "Ist trotz des Bestandsschutzes ein Wechsel in die freiwillige Steuerbarkeit gewünscht?",
+        "hinweistext": null,
+        "erforderlich": false
+      }
+    },
+    "graustromErfolgt": {
+      "aktiv": true,
+      "label": "Geben Sie an, ob eine Einspeisung von Graustrom erfolgt.",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "zeitreihentypBezug": {
+      "text": "Welcher Zeitreihentyp soll für den Bezug verwendet werden?",
+      "aktiv": true,
+      "label": "Zeitreihentyp Bezug",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "SLS"
+        },
+        {
+          "aktiv": true,
+          "label": "LGS"
+        },
+        {
+          "aktiv": true,
+          "label": "Andere"
+        }
+      ],
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "graustromeinspeisung": {
+      "aktiv": true,
+      "label": "Bilanzkreis der Graustromeinspeisung",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "vermarkterGraustroms": {
+      "aktiv": true,
+      "label": "Vermarkter des Graustroms",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "maximalerLeistungsbezug": {
+      "aktiv": false,
+      "label": "Maximaler Leistungsbezug",
+      "hinweistext": "Hinweistext maximalerLeistungsbezug",
+      "validierung": [
+        {
+          "regex": "^-?\\d+(\\,\\d+)?$",
+          "errorMessage": "Bitte geben Sie eine Nummer ein."
+        }
+      ],
+      "erforderlich": true
+    },
+    "zeitreihentypEinspeisung": {
+      "text": "Welcher Zeitreihentyp soll für die Einspeisung verwendet werden?",
+      "aktiv": true,
+      "label": "Zeitreihentyp Einspeisung",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "SOL"
+        },
+        {
+          "aktiv": true,
+          "label": "EGS"
+        },
+        {
+          "aktiv": true,
+          "label": "Andere"
+        }
+      ],
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "maximaleNetzeinspeiseleistung": {
+      "text": "Geben Sie bitte die maximale Netzeinspeiseleistung der Speichereinheit an.",
+      "aktiv": false,
+      "label": "Maximale Netzeinspeiseleistung",
+      "hinweistext": "Hinweistext MaximaleNetzeinspeiseleistung",
+      "validierung": [
+        {
+          "regex": "^-?\\d+(\\,\\d+)?$",
+          "errorMessage": "Bitte geben Sie eine Nummer ein."
+        }
+      ],
+      "erforderlich": true
+    },
+    "benoetigteHausanschlusssicherung": {
+      "aktiv": true,
+      "label": "Benötigte Hausanschlusssicherung in Ampere (A)",
+      "hinweistext": null,
+      "erforderlich": false,
+      "validierung": [
+        {
+          "regex": "^\\d+(\\,\\d+)?$",
+          "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+        }
+      ]
+    },
+    "summeMaximaleScheinleistungSpeicher": {
+      "aktiv": true,
+      "label": "Summe der maximalen Scheinleistung aller Speichereinheiten dieses Typs in kVA",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "leistungserhoehungHausanschlusssicherung": {
+      "aktiv": true,
+      "label": "Wird eine Leistungserhöhung der Hausanschlusssicherung benötigt?",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "zusatzabfragen": [
+      {
+        "aktiv": true,
+        "label": "Zusatzabfrage Stromspeicher",
+        "links": [],
+        "header": "Zusatzabfrage Stromspeicher",
+        "hinweistext": "Hinweistext verbrauchsgeraeteStromspeicherZusatzabfrage",
+        "platzhalter": "Zusatzabfrage Stromspeicher",
+        "validierung": [],
+        "erforderlich": false
+      }
+    ]
+  }
+}

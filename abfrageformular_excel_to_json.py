@@ -4,6 +4,7 @@ from Wasser.Wasser import run as run_wasser
 from Fernwärme.Fernwärme import run as run_fern
 from Verbrauchsgeräte.Raumkühlung import run as run_raum
 from Verbrauchsgeräte.Wärmepumpe import run as run_pumpe
+from Verbrauchsgeräte.Stromspeicher import run as run_speicher
 
 
 
@@ -16,4 +17,5 @@ from Verbrauchsgeräte.Wärmepumpe import run as run_pumpe
 #run_wasser()
 #run_fern()   
 #run_raum()
-run_pumpe()
+#run_pumpe()
+run_speicher()

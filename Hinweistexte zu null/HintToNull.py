@@ -1,25 +1,25 @@
 import json
 
-def set_hinweistext_to_null(obj):
+def clean_placeholder_hinweistexte(obj):
     if isinstance(obj, dict):
         for key, value in obj.items():
-            if key == "hinweistext":
+            if key == "hinweistext" and isinstance(value, str) and "Hinweistext" in value:
                 obj[key] = None
             else:
-                set_hinweistext_to_null(value)
+                clean_placeholder_hinweistexte(value)
     elif isinstance(obj, list):
         for item in obj:
-            set_hinweistext_to_null(item)
+            clean_placeholder_hinweistexte(item)
 
 # Lade die JSON-Datei
-with open("Hinweistexte zu null/EEG.json", "r", encoding="utf-8") as f:
+with open("Hinweistexte zu null/OutletGebäude.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Bearbeite die Daten
-set_hinweistext_to_null(data)
+clean_placeholder_hinweistexte(data)
 
-# Speichere die geänderte JSON-Datei
-with open("Hinweistexte zu null/EEG_bereinigt.json", "w", encoding="utf-8") as f:
+# Speichere die bereinigte JSON-Datei
+with open("Hinweistexte zu null/JSON_bereinigt.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
-print("Alle Hinweistexte wurden auf null gesetzt und die Datei wurde als 'EEG_bereinigt.json' gespeichert.")
+print("Nur Platzhalter-Hinweistexte wurden auf null gesetzt (z. B. 'Hinweistext xyz').")
