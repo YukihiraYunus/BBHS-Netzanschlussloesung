@@ -7,75 +7,74 @@ def run():
     mapping = {
         # Vorgang
         "Vorgang (Dropdown)": ("vorgang", "vorgang"),
-        "Inbetriebnahme/Anmeldung": ("vorgang", "vorgang", "optionen", "Anmeldung"),
+        "Anmeldung": ("vorgang", "vorgang", "optionen", "Anmeldung"),
         "Anlagen- und Anschlussveränderung": ("vorgang", "vorgang", "optionen", "Anlagen- und Anschlussveränderung"),
         "Stilllegung": ("vorgang", "vorgang", "optionen", "Stilllegung"),
         "Datum der (geplanten) technischen Inbetriebsetzung": ("vorgang", "datumTechnischeInbetriebnahme"),
         "Datum der technischen Außerbetriebsetzung": ("vorgang", "datumTechnischeAuserbetriebnahme"),
 
         # Angaben zum Gerät
-        "Hersteller des Wechselrichters der Speichereinheit": ("angebenGeraet", "herstellerWechselrichter"),
-        "Typ des Wechselrichters der Speichereinheit": ("angebenGeraet", "typWechselrichter"),
-        "Maximale Scheinleistung des Wechselrichters der Speichereinheit in kVA": ("angebenGeraet", "maximaleScheinleistung"),
-        "Einheitenzertifikat des Wechselrichters der Speichereinheit (Uploadfeld)": ("angebenGeraet", "einheitenzertifikatWechselrichters"),
-        "ZEREZ-Registernummer": ("angebenGeraet", "zerezRegisternummer"),
-        "Maximale Ladeleistung (Netzbezugsleistung) der Speichereinheit in kW": ("angebenGeraet", "maximaleLadeleistungKW"),
-        "Maximale Entladeleistung (Netzeinspeiseleistung) der Speichereinheit in kW": ("angebenGeraet", "maximaleEntladeleistungKW"),
-        "Bruttokapazität der Speichereinheit in kWh": ("angebenGeraet", "bruttokapazitaetKWh"),
-        "Nettokapazität der Speichereinheit in kWH": ("angebenGeraet", "nettokapazitaetKWh"),
-        "Wählen Sie aus, an welche Phasen die Speichereinheit angeschlossen wurde. (Mehrfachauswahl möglich)": ("angebenGeraet", "phasenSpeichereinheit"),
-        "L1": ("angebenGeraet", "phasenSpeichereinheit", "optionen", "L1"),
-        "L2": ("angebenGeraet", "phasenSpeichereinheit", "optionen", "L2"),
-        "L3": ("angebenGeraet", "phasenSpeichereinheit", "optionen", "L3"),
-        "Drehstrom": ("angebenGeraet", "phasenSpeichereinheit", "optionen", "Drehstrom"),
-        "Anzahl der Speichereinheiten dieses Typs": ("angebenGeraet", "anzahlSpeichereinheiten"),
-        "Summe der maximalen Scheinleistung aller Speichereinheiten in kVA": ("summeMaximaleScheinleistungSpeicher",),
+        "Hersteller der Ladeeinrichtung": ("angebenGeraet", "herstellerLadeeinrichtung"),
+        "Typ der Ladeeinrichtung": ("angebenGeraet", "typLadeeinrichtung"),
+        "Bauart der Ladeeinrichtung (Dropdown)": ("angebenGeraet", "bauartLadeeinrichtung"),
+        "Ladesäule": ("angebenGeraet", "bauartLadeeinrichtung", "optionen", "Ladesäule"),
+        "Ladebox": ("angebenGeraet", "bauartLadeeinrichtung", "optionen", "Ladebox"),
+        "Sonstiges": ("angebenGeraet", "bauartLadeeinrichtung", "optionen", "Sonstiges"),
+        "Anzahl der Ladepunkte in AC": ("angebenGeraet", "anzahlLadepunkteAc"),
+        "Anzahl der Ladepunkte in DC": ("angebenGeraet", "anzahlLadepunkteDc"),
+        "Leistung der Ladeeinrichtung in kW": ("angebenGeraet", "leistungLadeeinrichtung"),
+        "Maximale Netzbezugsleistung der Ladeeinrichtung in kW": ("angebenGeraet", "maximaleNetzbezugsleistungLadeeinrichtung"),
+        "Maximale Netzeinspeiseleistung der Ladeeinrichtung in kW": ("angebenGeraet", "maximaleNetzeinspeiseleistungLadeeinrichtung"),
+        "Anzahl baugleicher Ladeeinrichtungen": ("angebenGeraet", "baugleicherLadeeinrichtungen"),
+        "Gesamtleistung der Ladeeinrichtung(en) in kW": ("angebenGeraet", "gesamtleistungLadeeinrichtung"),
 
         # Kundenanlage / Messkonzept
-        "Mess- und Betriebskonzept (Dropdownfeld)": ("messkonzept", "messkonzept"),
+        "Wählen Sie bitte das Mess- und Betriebskonzept der Anlage aus (Dropdownfeld)": ("messkonzept", "messkonzept"),
         "Messkonzept 1": ("messkonzept", "messkonzept", "optionen", "Messkonzept 1"),
         "Messkonzept 2": ("messkonzept", "messkonzept", "optionen", "Messkonzept 2"),
         "Messkonzept 3": ("messkonzept", "messkonzept", "optionen", "Messkonzept 3"),
         "Abweichendes Messkonzept": ("messkonzept", "messkonzept", "optionen", "Abweichendes Messkonzept"),
         "Abweichendes Messkonzept (Uploadfeld)": ("messkonzept", "messBetriebskonzept"),
-        "Ist bereits ein zu nutzender Zähler vorhanden?": ("messkonzept", "nutzenderZaehler"),
-        "Soll die Messung über einen separaten Zähler erfolgen?": ("messkonzept", "separatenZaehlerErfolgen"),
+        "Ist bereits ein zu nutzender Zähler vorhanden? (Radiobutton)": ("messkonzept", "nutzenderZaehler"),
+        "Soll die Messung über einen separaten Zähler erfolgen? (Radiobutton)": ("messkonzept", "separatenZaehlerErfolgen"),
         "Angabe der Zählernummer des vorhandenen Zählers (Textfeld)": ("messkonzept", "zaehlernummer"),
 
         # Lastmanagement
-        "Wählen Sia aus, ob das Gerät über ein Lastmanagement gesteuert wird und wenn ja, wie die Steuerung erfolgt.": ("messkonzept", "lastmanagement"),
+        "Wählen Sia aus, ob das Gerät über ein Lastmanagement gesteuert wir und wenn ja, wie die Steuerung erfolgt. (Dropdown)": ("messkonzept", "lastmanagement"),
         "Nein": ("messkonzept", "lastmanagement", "optionen", "Nein"),
         "Ja (dynamisch)": ("messkonzept", "lastmanagement", "optionen", "Ja (dynamisch)"),
         "Ja (statisch)": ("messkonzept", "lastmanagement", "optionen", "Ja (statisch)"),
 
-        # Graustrom
-        "Geben Sie an, ob eine Einspeisung von Graustrom erfolgt.": ("graustromErfolgt",),
-        "Bilanzkreis der Graumstromeinspeisung": ("graustromeinspeisung",),
-        "Vermarkter des Graustroms": ("vermarkterGraustroms",),
+        # Zugänglichkeit
+        "Zugänglichkeit der Ladeeinrichtung(en) (Dropdown)": ("zugaenglichkeit",),
+        "Ladeeinrichtung(en) öffentlich zugänglich": ("zugaenglichkeit", "optionen", "Ladeeinrichtung(en) öffentlich zugänglich"),
+        "Ladeeinrichtung(en) nicht öffentlich zugänglich": ("zugaenglichkeit", "optionen", "Ladeeinrichtung(en) nicht öffentlich zugänglich"),
 
-        # Zeitreihentypen
-        "Welcher Zeitreihentyp soll für den Bezug verwendet werden? (Dropdown)": ("zeitreihentypBezug",),
-        "SLS": ("zeitreihentypBezug", "optionen", "SLS"),
-        "LGS": ("zeitreihentypBezug", "optionen", "LGS"),
-        "Anderer": ("zeitreihentypBezug", "optionen", "Andere"),
-        "Welcher Zeitreihentyp soll für die Einspeisung verwendet werden? (Dropdown)": ("zeitreihentypEinspeisung",),
-        "SOL": ("zeitreihentypEinspeisung", "optionen", "SOL"),
-        "EGS": ("zeitreihentypEinspeisung", "optionen", "EGS"),
+        # Sonderrechte / Graustrom
+        "Wird/werden die Ladeeinrichtung(en) durch eine Institution betrieben, die Sonderrechte in Anspruch nimmt? (Ja/Nein) (Radiobutton)": ("ladeeinrichtungSonderrechte",),
+        "Geben Sie an, ob eine Einspeisung von Graustrom erfolgt. (Ja/Nein) (Radiobutton)": ("graustromEingespeist",),
+        "Bilanzkreis der Graustromeinspeisung": ("bilanzkreisGraustromeinspeisung",),
+        "Vermarkter des Graustroms": ("vermarktetGraustrom",),
 
         # Hausanschlusssicherung
-        "Wird eine Leistungserhöhung der Hausanschlusssicherung benötigt?": ("leistungserhoehungHausanschlusssicherung",),
+        "Wird eine Leistungserhöhung der Hausanschlusssicherung benötigt? (Ja/Nein) (Radiobutton)": ("leistungserhoehungHausanschlusssicherung",),
         "Benötigte Hausanschlusssicherung in Ampere (A)": ("benoetigteHausanschlusssicherung",),
+
+        # Zusatzabfragen
+        "[Zusatzabfrage 1]": ("zusatzabfragLadeeinrichtung",),
+        "[Zusatzabfrage 2]": ("zusatzabfragen",),
+        "[Zusatzabfrage x]": ("zusatzabfragen",),
 
         # Steuerung
         "Handelt es sich um eine Bestandsanlage vor dem 01.01.2024? (Dropdown)": ("angabenSteuerung", "individuelleVereinbarung"),
         "Ja (Anlage ohne Steuerung §14a alte Fassung)": ("angabenSteuerung", "individuelleVereinbarung", "optionen", "Ja (Anlage ohne Steuerung § 14a alte Fassung)"),
         "Ja (Anlage mit Steuerung§14a alte Fassung)": ("angabenSteuerung", "individuelleVereinbarung", "optionen", "Ja (Anlage mit Steuerung §14a  alte Fassung)"),
-        "Nein (nicht vor dem 01.01.2024)": ("angabenSteuerung", "individuelleVereinbarung", "optionen", "Nein"),
+        "Nein": ("angabenSteuerung", "individuelleVereinbarung", "optionen", "Nein"),
         "Ist trotz des Bestandsschutzes ein Wechsel in die freiwillige Steuerbarkeit gewünscht? (Radiobutton)": ("angabenSteuerung", "wechselFreiwilligeSteuerbarkeit"),
         "Wählen Sie aus, wie die Steuerung umgesetzt wird. (Dropdown)": ("angabenSteuerung", "steuerungsart"),
         "Direkt": ("angabenSteuerung", "steuerungsart", "optionen", "Direkt"),
         "Energiemanagementsystem": ("angabenSteuerung", "steuerungsart", "optionen", "Energiemanagementsystem"),
-        "Wählen Sie aus, welches Modul der Netzentgeldreduzierung nach §14a EnWG Sie anwenden möchten.": ("angabenSteuerung", "netzentgeltreduzierung"),
+        "Wählen Sie aus, welches Modul der Netzentgeldreduzierung nach §14a EnWG Sie anwenden möchten. (Dropdown)": ("angabenSteuerung", "netzentgeltreduzierung"),
         "Modul 1: Pauschale Reduzierung der Netzentgelte": ("angabenSteuerung", "netzentgeltreduzierung", "optionen", "Modul 1: Pauschale Reduzierung der Netzentgelte"),
         "Modul 2: Prozentuale Reduzierung des Arbeitspreises": ("angabenSteuerung", "netzentgeltreduzierung", "optionen", "Modul 2: Prozentuale Reduzierung des Arbeitspreises"),
         "Wählen Sie aus, wer für die Herstellung der Steuerbarkeit beauftragt wird. (Dropdown)": ("angabenSteuerung", "herstellungSteuerbarkeit"),
@@ -87,6 +86,7 @@ def run():
         # Dokumente
         "Lageplan (Uploadfeld)": ("dateien", "lageplan"),
         "Datenblatt (Uploadfeld)": ("dateien", "datenblatt"),
+        "Zusatzfeld Upload (Uploadfeld)": ("dateien", "zusatzdatei"),
 
         # AGB
         "AGB (Checkbox)": ("agb",),
@@ -94,15 +94,14 @@ def run():
 
 
 
-
     # === 2. JSON laden ===
-    with open("Verbrauchsgeräte/assets/Stromspeicher.json", "r", encoding="utf-8") as f:
+    with open("Verbrauchsgeräte/assets/Ladeeinrichtung.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
     # === 3. Excel laden ===
     df = pd.read_excel("Verbrauchsgeräte/assets/ANLAGE Abfrageformular Teilantrag Verbrauchsgeräte.xlsx", sheet_name="Abfrage optionale Felder", header=None)
     df.columns = [f"col_{i}" for i in range(df.shape[1])]
-    relevant_rows = df.iloc[161:243, [2, 4, 5, 6]]
+    relevant_rows = df.iloc[15:89, [2, 4, 5, 6]]
     relevant_rows.columns = ["label", "status", "pflicht", "hinweis"]
 
     # === 4. Update Funktion ===
@@ -165,7 +164,7 @@ def run():
 
 
     # === 5. Anwenden des Mappings ===
-    speicher_obj = data["stromspeicher"]
+    lade_obj = data["ladeeinrichtung"]
     for _, row in relevant_rows.iterrows():
         label = str(row["label"]).strip()
         status = str(row["status"]).strip().lower()
@@ -179,10 +178,10 @@ def run():
         )
 
         if label in mapping:
-            update_json(speicher_obj, mapping[label], status_value, required_value, hint_text)
+            update_json(lade_obj, mapping[label], status_value, required_value, hint_text)
         else:
             print(f"⚠️ Kein Mapping für Label gefunden: {label}")
 
     # === 6. Speichern ===
-    with open("output/Verbrauchsgeräte/Stromspeicher_automatisiert.json", "w", encoding="utf-8") as f:
+    with open("output/Verbrauchsgeräte/Ladeeinrichtung_automatisiert.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)

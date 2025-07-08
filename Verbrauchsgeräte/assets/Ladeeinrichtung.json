@@ -1,0 +1,542 @@
+{
+  "ladeeinrichtung": {
+    "agb": {
+      "link": {
+        "url": null
+      },
+      "aktiv": true,
+      "label": "AGB",
+      "hinweistext": "Hinweistext AGB",
+      "erforderlich": true
+    },
+    "aktiv": true,
+    "dateien": {
+      "heading": "Dokumente",
+      "lageplan": {
+        "label": "Lageplan",
+        "position": 1,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "datenblatt": {
+        "label": "Datenblatt",
+        "position": 2,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "zusatzdatei": {
+        "label": "Zusatzfeld Upload",
+        "position": 3,
+        "singleFile": true,
+        "hinweistext": null,
+        "erforderlich": false
+      }
+    },
+    "vorgang": {
+      "vorgang": {
+        "aktiv": true,
+        "label": "Vorgang",
+        "heading": "Angaben zum Vorgang",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Anmeldung",
+            "hinweistext": "Hinweistext anmeldung"
+          },
+          {
+            "aktiv": true,
+            "label": "Anlagen- und Anschlussveränderung",
+            "hinweistext": "Hinweistext veraenderung"
+          },
+          {
+            "aktiv": true,
+            "label": "Stilllegung",
+            "hinweistext": "Hinweistext stilllegung"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraetVorgang",
+        "erforderlich": true
+      },
+      "datenblatt": {
+        "aktiv": false,
+        "label": "Datenblatt",
+        "hinweistext": "Hinweistext verbrauchsgeraetDatenblatt",
+        "erforderlich": true
+      },
+      "datumTechnischeInbetriebnahme": {
+        "aktiv": true,
+        "label": "Datum der (geplanten) technischen Inbetriebsetzung",
+        "hinweistext": "Hinweistext verbrauchsgeraeteLadeeinrichtungDatumTechnischeInbetriebnahme",
+        "validierung": [
+          {
+            "regex": "^(0[1-9]|1\\d|2\\d|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$",
+            "errorMessage": "Bitte geben Sie ein gültiges Datum im Format DD.MM.YYYY ein."
+          }
+        ],
+        "erforderlich": true
+      },
+      "datumTechnischeAuserbetriebnahme": {
+        "aktiv": true,
+        "label": "Datum der technischen Außerbetriebsetzung",
+        "hinweistext": "Hinweistext verbrauchsgeraeteDatumTechnischeAuserbetriebsetzung",
+        "validierung": [
+          {
+            "regex": "^(0[1-9]|1\\d|2\\d|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$",
+            "errorMessage": "Bitte geben Sie ein gültiges Datum im Format DD.MM.YYYY ein."
+          }
+        ],
+        "erforderlich": true
+      }
+    },
+    "messkonzept": {
+      "messkonzept": {
+        "text": "Wählen Sie bitte das Mess- und Betriebskonzept der Anlage aus.",
+        "aktiv": true,
+        "label": "Messkonzept",
+        "links": [
+          {
+            "url": null,
+            "label": "Messkonzept 1"
+          },
+          {
+            "url": null,
+            "label": "Messkonzept 2"
+          },
+          {
+            "url": null,
+            "label": "Messkonzept 3"
+          }
+        ],
+        "heading": "Angaben zur Kundenanlage",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Messkonzept 1"
+          },
+          {
+            "aktiv": true,
+            "label": "Messkonzept 2"
+          },
+          {
+            "aktiv": true,
+            "label": "Messkonzept 3"
+          },
+          {
+            "aktiv": true,
+            "label": "Abweichendes Messkonzept"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraetMesskonzept",
+        "erforderlich": true
+      },
+      "zaehlernummer": {
+        "aktiv": true,
+        "label": "Angabe der Zählernummer des vorhandenen Zählers",
+        "hinweistext": "Tragen Sie die Zählernummer des Stromzählers ein. Hinweis: Zählernummer ist auf jeder Stromrechnung angegeben oder kann auf der Vorderseite des Stromzählers abgelesen werden.",
+        "erforderlich": true
+      },
+      "lastmanagement": {
+        "text": "Wählen Sie aus, ob die Anlage über ein Lastmanagement gesteuert wird und wenn ja, wie die Steuerung erfolgt.",
+        "aktiv": true,
+        "label": "Lastmanagement",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Nein"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja (dynamisch)"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja (statisch)"
+          }
+        ],
+        "hinweistext": "Wählen Sie aus, ob der Speicher über ein Lastmanagement gesteuert wird und wenn ja wie.",
+        "erforderlich": true
+      },
+      "nutzenderZaehler": {
+        "aktiv": true,
+        "label": "Ist bereits ein zu nutzender Zähler vorhanden?",
+        "hinweistext": "Wählen Sie aus, ob ein zu nutzender Zähler bereits vorhanden ist.",
+        "erforderlich": true
+      },
+      "separaterZaehler": {
+        "aktiv": true,
+        "label": "Soll die Verbrauchseinrichtung unter einem separaten Zähler angeschlossen werden?",
+        "hinweistext": "Hinweistext SeparaterZaehler",
+        "erforderlich": true
+      },
+      "angabeZaehlernummer": {
+        "aktiv": true,
+        "label": "Angabe der Zählernummer des vorhandenen Zählers",
+        "hinweistext": "Hinweistext zaehlernummerVorhandenerZaehler",
+        "erforderlich": true
+      },
+      "messBetriebskonzept": {
+        "aktiv": true,
+        "label": "Abweichendes Mess- und Betriebskonzept",
+        "hinweistext": "Hinweistext verbrauchsgeraetMessUndBetriebskonzept",
+        "erforderlich": true
+      },
+      "netzentgeltreduzierung": {
+        "text": "Wählen Sie bitte aus, welches Modul der Netzentgeltreduzierung Sie anwenden möchten.",
+        "aktiv": true,
+        "label": "Netzentgeltreduzierung",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Modul 1: Pauschale Reduzierung der Netzentgelte"
+          },
+          {
+            "aktiv": true,
+            "label": "Modul 2: Prozentuale Reduzierung des Arbeitspreises"
+          }
+        ],
+        "hinweistext": "Modul 2 der Netzentgeltreduzierung sieht grundsätzlich einen zusätzlichen Zähler für die Anlage vor.",
+        "erforderlich": true
+      },
+      "steuerbareWirkleistung": {
+        "text": "Ist die Wirkleistung netzorientiert steuerbar?",
+        "aktiv": false,
+        "label": "Netzorientiert steuerbare Wirkleistung",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Ja, Einzelsteuerung als steuVE"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja, Steuerung über EMS"
+          },
+          {
+            "aktiv": true,
+            "label": "Nein"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraetSteuerungLastmanagementsystem",
+        "erforderlich": true
+      },
+      "intelligentesMesssystem": {
+        "aktiv": false,
+        "label": "Ist die Verbrauchseinrichtung mit einem intelligenten Messsystem ausgestattet?",
+        "hinweistext": "Hinweistext intelligentesMesssystem",
+        "erforderlich": true
+      },
+      "separatenZaehlerErfolgen": {
+        "aktiv": true,
+        "label": "Soll die Messung über einen separaten Zähler erfolgen?",
+        "hinweistext": "Wählen Sie aus, ob die Messung über einen separaten Zähler erfolgen soll.",
+        "erforderlich": true
+      },
+      "bereitstellungBestellformular": {
+        "link": {
+          "url": null,
+          "label": "Link Bestellformular"
+        },
+        "aktiv": true,
+        "label": "Bereitstellung Bestellformular",
+        "hinweistext": null,
+        "erforderlich": true
+      }
+    },
+    "introduction": "Einleitung zu Ladeeinrichtung",
+    "angebenGeraet": {
+      "aktiv": true,
+      "heading": "Angaben zum Gerät",
+      "erforderlich": true,
+      "anzahlLadepunkteAc": {
+        "aktiv": true,
+        "label": "Anzahl der Ladepunkte in AC",
+        "hinweistext": "Tragen Sie die Anzahl der Ladepunkte der Ladeeinrichtung in AC ein. Laut Ladesäulenverordnung ist ein Ladepunkt eine Einrichtung an der gleichzeitig nur ein Elektromobil aufgeladen oder entladen werden kann. Eine Ladeeinrichtung kann einen oder mehrere Ladepunkte aufweisen.",
+        "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+$",
+            "errorMessage": "Es sind nur Zahlen erlaubt."
+          }
+        ]
+      },
+      "anzahlLadepunkteDc": {
+        "aktiv": true,
+        "label": "Anzahl der Ladepunkte in DC",
+        "hinweistext": "Tragen Sie die Anzahl der Ladepunkte der Ladeeinrichtung in DC ein. Laut Ladesäulenverordnung ist ein Ladepunkt eine Einrichtung an der gleichzeitig nur ein Elektromobil aufgeladen oder entladen werden kann. Eine Ladeeinrichtung kann einen oder mehrere Ladepunkte aufweisen.",
+        "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+$",
+            "errorMessage": "Es sind nur Zahlen erlaubt."
+          }
+        ]
+      },
+      "typLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Typ der Ladeeinrichtung",
+        "hinweistext": "Wählen Sie den Typ/das Modell der Ladeeinrichtung aus.",
+        "erforderlich": true
+      },
+      "bauartLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Bauart der Ladeeinrichtung",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Ladesäule"
+          },
+          {
+            "aktiv": true,
+            "label": "Ladebox"
+          },
+          {
+            "aktiv": true,
+            "label": "Sonstiges"
+          }
+        ],
+        "hinweistext": "Wählen Sie die Bauart der Ladeeinrichtung. Eine Ladesäule hat meistens mehrere Ladepunkte und ist i. d. R. öffentlich zugänglich; eine Ladebox hat meistens einen Ladepunkt, zeichnet sich durch eine max. Leistung bis 22 kW aus und ist i. d. R. privat zugänglich.",
+        "erforderlich": true
+      },
+      "leistungLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Leistung der Ladeeinrichtung in kW",
+        "hinweistext": "Hinweistext verbrauchsgeraetLeistungLadeeinrichtung",
+        "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur positive Dezimalzahlen erlaubt."
+          }
+        ]
+      },
+      "herstellerLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Hersteller der Ladeeinrichtung",
+        "hinweistext": "Wählen Sie den Hersteller der Ladeeinrichtung aus.",
+        "erforderlich": true
+      },
+      "baugleicherLadeeinrichtungen": {
+        "aktiv": true,
+        "label": "Anzahl baugleicher Ladeeinrichtungen",
+        "hinweistext": "Tragen Sie die Anzahl baugleicher Ladeeinrichtungen ein. Eine Ladeeinrichtung ist eine Einrichtung zum Energietausch.",
+        "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+$",
+            "errorMessage": "Es sind nur Zahlen erlaubt."
+          }
+        ]
+      },
+      "gesamtleistungLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Gesamtleistung der Ladeeinrichtung(en) in kW",
+        "hinweistext": "Hinweistext verbrauchsgeraetGesamtleistungLadeeinrichtung",
+        "erforderlich": true
+      },
+      "maximaleNetzbezugsleistungLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Maximale Netzbezugsleistung der Ladeeinrichtung in kW",
+        "hinweistext": "Tragen Sie den Wert für die maximale Netzbezugsleistung der Ladeeinrichtung am Netzanschlusspunkt in Kilowatt (kW) ein.",
+        "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ]
+      },
+      "maximaleNetzeinspeiseleistungLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Maximale Netzeinspeiseleistung der Ladeeinrichtung in kW",
+        "hinweistext": "Tragen Sie den Wert für die maximale Netzeinspeiseleistung der Ladeeinrichtung am Netzanschlusspunkt in Kilowatt (kW) ein.",
+        "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+          }
+        ]
+      }
+    },
+    "zusatzabfragen": [
+      {
+        "aktiv": true,
+        "label": "Zusatzinformation",
+        "links": [
+          {
+            "url": "https://www.google.de",
+            "label": "Google"
+          }
+        ],
+        "header": "Zusatzabfragen Ladeeinrichtung",
+        "hinweistext": "Hinweistext ladeeinrichtungZusatzabfrage",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "zugaenglichkeit": {
+      "aktiv": true,
+      "label": "Zugänglichkeit der Ladeeinrichtung(en)",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Ladeeinrichtung(en) öffentlich zugänglich"
+        },
+        {
+          "aktiv": true,
+          "label": "Ladeeinrichtung(en) nicht öffentlich zugänglich"
+        }
+      ],
+      "hinweistext": "Wählen Sie die Zugänglichkeit aus. Ein Ladepunkt ist nach § 2 Nr. 5 Ladesäulenverordnung öffentlich zugänglich, wenn der zum Ladepunkt gehörende Parkplatz von einem unbestimmten oder nur nach allgemeinen Merkmalen bestimmbaren Personenkreis tatsächlich befahren werden kann, es sei denn, der Betreiber hat am Ladepunkt oder in unmittelbarer räumlicher Nähe zum Ladepunkt durch eine deutlich sichtbare Kennzeichnung oder Beschilderung die Nutzung auf einen individuell bestimmten Personenkreis beschränkt; der Personenkreis wird nicht allein dadurch bestimmt, dass die Nutzung des Ladepunktes von einer Anmeldung oder Registrierung abhängig gemacht wird.",
+      "erforderlich": true
+    },
+    "angabenSteuerung": {
+      "aktiv": true,
+      "heading": "Angaben zur Steuerung",
+      "erforderlich": true,
+      "steuerungsart": {
+        "text": "Wählen Sie aus, wie die Steuerung umgesetzt wird.",
+        "aktiv": true,
+        "label": "Steuerungsart",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Direkt"
+          },
+          {
+            "aktiv": true,
+            "label": "Energiemanagementsystem"
+          }
+        ],
+        "hinweistext": "Wählen Sie aus, wie die Steuerung umgesetzt wird. Die Steuerungsaufgabe wird durch die technischen Eigenschaften der steuerbaren Einrichtung bestimmt, welche durch den Anlagenbetreiber oder dessen Elektroinstallateur bei der Anmeldung angegeben werden müssen. Der Netzbetreiber teilt dem zuständigen Messtellenbetreiber die Steuerungsaufgaben mit. Der Messtellenbetreiber überführt diese Steuerungsaufgaben in ein Steuerungskonzept, wählt die Technik aus und montiert diese beim Anlagenbetreiber.",
+        "erforderlich": true
+      },
+      "messstellenbetreiber": {
+        "aktiv": true,
+        "label": "Angabe des wettbewerblichen Messstellenbetreibers",
+        "hinweistext": "Hinweistext verbrauchsgeraetwettbewerlichermessstellenbetreiber",
+        "erforderlich": true
+      },
+      "netzentgeltreduzierung": {
+        "text": "Wählen Sie  aus, welches Modul der Netzentgeldreduzierung nach § 14a EnWG Sie anwenden möchten.",
+        "aktiv": true,
+        "label": "Netzentgeltreduzierung",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Modul 1: Pauschale Reduzierung der Netzentgelte"
+          },
+          {
+            "aktiv": true,
+            "label": "Modul 2: Prozentuale Reduzierung des Arbeitspreises"
+          }
+        ],
+        "hinweistext": "Wählen Sie das Netzentgeltmodul aus. Es gibt verschiedene Module zur Entgeltreduzierung. Einem netzbetreiberindividuellen pauschalen Betrag (Modul 1) oder einer prozentualen Reduzierung des Arbeitspreises (Modul 2). Der Betreiber der steuerbaren Verbrauchseinrichtung kann zwischen Modul 1 und 2 auswählen.\nHinweis: Bei Modul 2 wird ein seperater Zähler benötigt.",
+        "erforderlich": true
+      },
+      "herstellungSteuerbarkeit": {
+        "text": "Wählen Sie aus, wer für die Herstellung der Steuerbarkeit beauftragt wird.",
+        "aktiv": true,
+        "label": "Herstellung der Steuerbarkeit durch",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Grundzuständigen Messstellenbetreiber"
+          },
+          {
+            "aktiv": true,
+            "label": "Wettbewerblicher Messstellenbetreiber"
+          },
+          {
+            "aktiv": true,
+            "label": "Netzbetreiber"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraetWerStelltSteuerbarkeitHer",
+        "erforderlich": true
+      },
+      "individuelleVereinbarung": {
+        "text": "Handelt es sich um eine Bestandsanlage vor dem 01.01.2024?",
+        "aktiv": true,
+        "label": "Bestandsanlage vor dem 01.01.2024",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Ja (Anlage ohne Steuerung § 14a alte Fassung)"
+          },
+          {
+            "aktiv": true,
+            "label": "Ja (Anlage mit Steuerung §14a  alte Fassung)"
+          },
+          {
+            "aktiv": true,
+            "label": "Nein"
+          }
+        ],
+        "hinweistext": "Hinweistext verbrauchsgeraeteLadeeinrichtungBestandsanlage",
+        "erforderlich": true
+      },
+      "wechselFreiwilligeSteuerbarkeit": {
+        "aktiv": true,
+        "label": "Ist trotz des Bestandsschutzes ein Wechsel in die freiwillige Steuerbarkeit gewünscht?",
+        "hinweistext": "Hinweistext verrauchsgeraeteBestandsschutzWechsel",
+        "erforderlich": true
+      }
+    },
+    "vermarktetGraustrom": {
+      "aktiv": true,
+      "label": "Vermarkter des Graustroms",
+      "hinweistext": "Hinweistext verbrauchsgeraeteLadeeinrichtungGraustromvermarkter",
+      "erforderlich": true
+    },
+    "graustromEingespeist": {
+      "aktiv": true,
+      "label": "Geben Sie an, ob eine Einspeisung von Graustrom erfolgt.",
+      "hinweistext": "Hinweistext verbrauchsgeraeteLadeeinrichtungGraustromeinspeisung",
+      "erforderlich": true
+    },
+    "ladeeinrichtungSonderrechte": {
+      "aktiv": true,
+      "label": "Wird/werden die Ladeeinrichtung(en) durch eine Institution betrieben, die Sonderrechte in Anspruch nimmt?",
+      "hinweistext": "Wählen Sie aus, ob der Ladepunkt durch eine Institution betrieben wird, die Sonderrechte in Anspruch nimmt. Eine Ausnahme von der Teilnahmeverpflichtung stellen Ladepunkte für solche Elektromobile dar, die von Institutionen betrieben werden, die gemäß § 35 Absätze 1 und 5a Straßenverkehrsordnung (StVO) Sonderrechte in Anspruch nehmen dürfen.",
+      "erforderlich": true
+    },
+    "zusatzabfragLadeeinrichtung": [
+      {
+        "aktiv": true,
+        "label": "Zusatzabfrage Ladeeinrichtung",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext zusatzabfrageLadeeinrichtung",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "bilanzkreisGraustromeinspeisung": {
+      "aktiv": true,
+      "label": "Bilanzkreis der Graustromeinspeisung",
+      "hinweistext": "Hinweistext verbrauchsgeraetBilanzkreisDerGraustromeinspeisung",
+      "erforderlich": true
+    },
+    "benoetigteHausanschlusssicherung": {
+      "aktiv": true,
+      "label": "Benötigte Hausanschlusssicherung in Ampere (A)",
+      "hinweistext": "Hinweistext verbrauchsgeraetBenötigteHausanschlusssicherung",
+      "erforderlich": true,
+      "validierung": [
+        {
+          "regex": "^\\d+(\\,\\d+)?$",
+          "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
+        }
+      ]
+    },
+    "leistungserhoehungHausanschlusssicherung": {
+      "aktiv": true,
+      "label": "Wird eine Leistungserhöhung der Hausanschlusssicherung benötigt?",
+      "hinweistext": "Hinweistext verbrauchsgeraetLeistungserhoehungHausanschlusssicherung",
+      "erforderlich": true
+    }
+  }
+}

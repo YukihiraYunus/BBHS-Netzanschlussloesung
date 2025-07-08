@@ -1,5 +1,5 @@
 {
-  "waermepumpe": {
+  "ladeeinrichtung": {
     "agb": {
       "link": {
         "url": null
@@ -94,7 +94,7 @@
       "messkonzept": {
         "text": "Wählen Sie bitte das Mess- und Betriebskonzept der Anlage aus.",
         "aktiv": true,
-        "label": "Mess- und Betriebskonzept",
+        "label": "Messkonzept",
         "links": [
           {
             "url": null,
@@ -128,8 +128,8 @@
             "label": "Abweichendes Messkonzept"
           }
         ],
-        "hinweistext": null,
-        "erforderlich": false
+        "hinweistext": "Hinweistext verbrauchsgeraetMesskonzept",
+        "erforderlich": true
       },
       "zaehlernummer": {
         "aktiv": true,
@@ -165,13 +165,13 @@
         "erforderlich": false
       },
       "separaterZaehler": {
-        "aktiv": false,
+        "aktiv": true,
         "label": "Soll die Verbrauchseinrichtung unter einem separaten Zähler angeschlossen werden?",
-        "hinweistext": null,
-        "erforderlich": false
+        "hinweistext": "Hinweistext SeparaterZaehler",
+        "erforderlich": true
       },
       "angabeZaehlernummer": {
-        "aktiv": false,
+        "aktiv": true,
         "label": "Angabe der Zählernummer des vorhandenen Zählers",
         "hinweistext": "Hinweistext zaehlernummerVorhandenerZaehler",
         "erforderlich": true
@@ -221,7 +221,7 @@
         "erforderlich": true
       },
       "intelligentesMesssystem": {
-        "aktiv": true,
+        "aktiv": false,
         "label": "Ist die Verbrauchseinrichtung mit einem intelligenten Messsystem ausgestattet?",
         "hinweistext": "Hinweistext intelligentesMesssystem",
         "erforderlich": true
@@ -229,8 +229,8 @@
       "separatenZaehlerErfolgen": {
         "aktiv": true,
         "label": "Soll die Messung über einen separaten Zähler erfolgen?",
-        "hinweistext": "Wählen Sie aus, ob die Messung über einen separaten Zähler erfolgen soll.",
-        "erforderlich": true
+        "hinweistext": null,
+        "erforderlich": false
       },
       "bereitstellungBestellformular": {
         "link": {
@@ -243,72 +243,14 @@
         "erforderlich": true
       }
     },
-    "introduction": "Einleitung zu Wärmepumpe",
+    "introduction": "Einleitung zu Ladeeinrichtung",
     "angebenGeraet": {
       "aktiv": true,
       "heading": "Angaben zum Gerät",
       "erforderlich": true,
-      "artwaermepumpe": {
+      "anzahlLadepunkteAc": {
         "aktiv": true,
-        "label": "Art der Wärmepumpe",
-        "optionen": [
-          {
-            "aktiv": true,
-            "label": "Luft-Luft"
-          },
-          {
-            "aktiv": true,
-            "label": "Luft-Wasser"
-          },
-          {
-            "aktiv": true,
-            "label": "Wasser-Wasser"
-          },
-          {
-            "aktiv": true,
-            "label": "Sole-Wasser"
-          },
-          {
-            "aktiv": true,
-            "label": "Sonstiges"
-          }
-        ],
-        "hinweistext": null,
-        "erforderlich": false
-      },
-      "typWaermepumpe": {
-        "aktiv": true,
-        "label": "Typ der Wärmepumpe",
-        "hinweistext": null,
-        "erforderlich": false
-      },
-      "maximalerAnlaufstrom": {
-        "aktiv": true,
-        "label": "Maximaler Anlaufstrom der Wärmepumpe in Ampere (A)",
-        "hinweistext": null,
-        "erforderlich": false,
-        "validierung": [
-          {
-            "regex": "^\\d+(\\,\\d+)?$",
-            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
-          }
-        ]
-      },
-      "herstellerWaermepumpe": {
-        "aktiv": true,
-        "label": "Hersteller der Wärmepumpe",
-        "hinweistext": null,
-        "erforderlich": false
-      },
-      "gesamtleistungWaermepumpen": {
-        "aktiv": true,
-        "label": "Gesamtleistung der Wärmepumpe(n) in kW",
-        "hinweistext": null,
-        "erforderlich": true
-      },
-      "anzahlBaugleicherWaermepumpen": {
-        "aktiv": true,
-        "label": "Anzahl baugleicher Wärmepumpen",
+        "label": "Anzahl der Ladepunkte in AC",
         "hinweistext": null,
         "erforderlich": false,
         "validierung": [
@@ -318,11 +260,85 @@
           }
         ]
       },
-      "elektrischeLeistungWarmwasser": {
+      "anzahlLadepunkteDc": {
         "aktiv": true,
-        "label": "Elektrische Leistung (ohne Zusatzheizung) in kW",
+        "label": "Anzahl der Ladepunkte in DC",
+        "hinweistext": null,
+        "erforderlich": false,
+        "validierung": [
+          {
+            "regex": "^\\d+$",
+            "errorMessage": "Es sind nur Zahlen erlaubt."
+          }
+        ]
+      },
+      "typLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Typ der Ladeeinrichtung",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "bauartLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Bauart der Ladeeinrichtung",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Ladesäule"
+          },
+          {
+            "aktiv": true,
+            "label": "Ladebox"
+          },
+          {
+            "aktiv": true,
+            "label": "Sonstiges"
+          }
+        ],
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "leistungLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Leistung der Ladeeinrichtung in kW",
         "hinweistext": null,
         "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+(\\,\\d+)?$",
+            "errorMessage": "Es sind nur positive Dezimalzahlen erlaubt."
+          }
+        ]
+      },
+      "herstellerLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Hersteller der Ladeeinrichtung",
+        "hinweistext": null,
+        "erforderlich": false
+      },
+      "baugleicherLadeeinrichtungen": {
+        "aktiv": true,
+        "label": "Anzahl baugleicher Ladeeinrichtungen",
+        "hinweistext": null,
+        "erforderlich": true,
+        "validierung": [
+          {
+            "regex": "^\\d+$",
+            "errorMessage": "Es sind nur Zahlen erlaubt."
+          }
+        ]
+      },
+      "gesamtleistungLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Gesamtleistung der Ladeeinrichtung(en) in kW",
+        "hinweistext": null,
+        "erforderlich": true
+      },
+      "maximaleNetzbezugsleistungLadeeinrichtung": {
+        "aktiv": true,
+        "label": "Maximale Netzbezugsleistung der Ladeeinrichtung in kW",
+        "hinweistext": null,
+        "erforderlich": false,
         "validierung": [
           {
             "regex": "^\\d+(\\,\\d+)?$",
@@ -330,21 +346,9 @@
           }
         ]
       },
-      "elektrischeLeistungRaumheizung": {
+      "maximaleNetzeinspeiseleistungLadeeinrichtung": {
         "aktiv": true,
-        "label": "Elektrische Leistung der Zusatzheizung in kW",
-        "hinweistext": null,
-        "erforderlich": true,
-        "validierung": [
-          {
-            "regex": "^\\d+(\\,\\d+)?$",
-            "errorMessage": "Es sind nur Dezimalzahlen erlaubt."
-          }
-        ]
-      },
-      "maximaleNetzbezugsleistungWaermepumpe": {
-        "aktiv": true,
-        "label": "Maximale Netzbezugsleistung der Wärmepumpe in kW",
+        "label": "Maximale Netzeinspeiseleistung der Ladeeinrichtung in kW",
         "hinweistext": null,
         "erforderlich": false,
         "validierung": [
@@ -365,13 +369,29 @@
             "label": "Google"
           }
         ],
-        "header": "Zusatzabfragen Wärmepumpe",
-        "hinweistext": "Hinweistext waermepumpeZusatzabfrage",
+        "header": "Zusatzabfragen Ladeeinrichtung",
+        "hinweistext": "Hinweistext ladeeinrichtungZusatzabfrage",
         "platzhalter": null,
         "validierung": [],
         "erforderlich": false
       }
     ],
+    "zugaenglichkeit": {
+      "aktiv": true,
+      "label": "Zugänglichkeit der Ladeeinrichtung(en)",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Ladeeinrichtung(en) öffentlich zugänglich"
+        },
+        {
+          "aktiv": true,
+          "label": "Ladeeinrichtung(en) nicht öffentlich zugänglich"
+        }
+      ],
+      "hinweistext": null,
+      "erforderlich": true
+    },
     "angabenSteuerung": {
       "aktiv": true,
       "heading": "Angaben zur Steuerung",
@@ -396,8 +416,8 @@
       "messstellenbetreiber": {
         "aktiv": true,
         "label": "Angabe des wettbewerblichen Messstellenbetreibers",
-        "hinweistext": null,
-        "erforderlich": false
+        "hinweistext": "Hinweistext verbrauchsgeraetwettbewerlichermessstellenbetreiber",
+        "erforderlich": true
       },
       "netzentgeltreduzierung": {
         "text": "Wählen Sie  aus, welches Modul der Netzentgeldreduzierung nach § 14a EnWG Sie anwenden möchten.",
@@ -465,17 +485,41 @@
         "erforderlich": false
       }
     },
-    "zusatzabfrageWaermepumpen": [
+    "vermarktetGraustrom": {
+      "aktiv": true,
+      "label": "Vermarkter des Graustroms",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "graustromEingespeist": {
+      "aktiv": true,
+      "label": "Geben Sie an, ob eine Einspeisung von Graustrom erfolgt.",
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "ladeeinrichtungSonderrechte": {
+      "aktiv": true,
+      "label": "Wird/werden die Ladeeinrichtung(en) durch eine Institution betrieben, die Sonderrechte in Anspruch nimmt?",
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "zusatzabfragLadeeinrichtung": [
       {
         "aktiv": true,
-        "label": "Zusatzabfrage Wärmepumpen",
+        "label": "Zusatzabfrage Ladeeinrichtung",
         "header": "Zusatzabfragen1",
-        "hinweistext": "Hinweistext zusatzabfrageWaermepumpen",
+        "hinweistext": "Hinweistext zusatzabfrageLadeeinrichtung",
         "platzhalter": null,
         "validierung": [],
         "erforderlich": false
       }
     ],
+    "bilanzkreisGraustromeinspeisung": {
+      "aktiv": true,
+      "label": "Bilanzkreis der Graustromeinspeisung",
+      "hinweistext": null,
+      "erforderlich": false
+    },
     "benoetigteHausanschlusssicherung": {
       "aktiv": true,
       "label": "Benötigte Hausanschlusssicherung in Ampere (A)",
@@ -488,17 +532,11 @@
         }
       ]
     },
-    "waermepumpebetriebsnotwendigeZwecke": {
-      "aktiv": true,
-      "label": "Wird die Wärmepumpe für betriebsnotwendige Zwecke oder in einer kritischen Infrastruktur eingesetzt?",
-      "hinweistext": null,
-      "erforderlich": true
-    },
     "leistungserhoehungHausanschlusssicherung": {
       "aktiv": true,
       "label": "Wird eine Leistungserhöhung der Hausanschlusssicherung benötigt?",
       "hinweistext": null,
-      "erforderlich": false
+      "erforderlich": true
     }
   }
 }

@@ -60,7 +60,7 @@ def run():
         "Handelt es sich um eine Bestandsanlage vor dem 01.01.2024? (Dropdown)": ("angabenSteuerung", "individuelleVereinbarung"),
         "Ja (Anlage ohne Steuerung §14a alte Fassung)": ("angabenSteuerung", "individuelleVereinbarung", "optionen", "Ja (Anlage ohne Steuerung § 14a alte Fassung)"),
         "Ja (Anlage mit Steuerung§14a alte Fassung)": ("angabenSteuerung", "individuelleVereinbarung", "optionen", "Ja (Anlage mit Steuerung §14a  alte Fassung)"),
-        "Nein": ("angabenSteuerung", "individuelleVereinbarung", "optionen", "Nein"),
+        "Nein (nicht vor dem 01.01.2024)": ("angabenSteuerung", "individuelleVereinbarung", "optionen", "Nein"),
         "Ist trotz des Bestandsschutzes ein Wechsel in die freiwillige Steuerbarkeit gewünscht? (Radiobutton)": ("angabenSteuerung", "wechselFreiwilligeSteuerbarkeit"),
         "Wählen Sie aus, wie die Steuerung umgesetzt wird. (Dropdown)": ("angabenSteuerung", "steuerungsart"),
         "Direkt": ("angabenSteuerung", "steuerungsart", "optionen", "Direkt"),
