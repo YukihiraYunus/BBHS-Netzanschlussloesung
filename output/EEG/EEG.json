@@ -1,0 +1,1198 @@
+{
+  "eeg": {
+    "agb": {
+      "link": {
+        "url": null
+      },
+      "aktiv": true,
+      "label": "AGB",
+      "hinweistext": "Hinweistext AGB",
+      "erforderlich": true
+    },
+    "bic": {
+      "aktiv": true,
+      "label": "BIC",
+      "hinweistext": "Hinweistext eegBIC",
+      "validierung": [
+        {
+          "regex": "^.{8,11}$",
+          "errorMessage": "Bitte geben Sie zwischen 8 und 11 Zeichen ein."
+        }
+      ],
+      "erforderlich": true
+    },
+    "iban": {
+      "aktiv": true,
+      "label": "IBAN",
+      "hinweistext": "Hinweistext eegIBAN",
+      "validierung": [
+        {
+          "regex": "^.{22}$",
+          "errorMessage": "Bitte geben Sie genau 22 Zeichen ein."
+        }
+      ],
+      "erforderlich": true
+    },
+    "aktiv": true,
+    "dateien": {
+      "plan": {
+        "label": "Lageplan",
+        "position": 1,
+        "singleFile": true,
+        "hinweistext": "Aktueller Lageplan, aus dem der Aufstellungsort der Anlage ersichtlich ist oder digitaler Eintrag in einem Geosystem des Netzbetreibers.",
+        "erforderlich": true
+      },
+      "text": "Laden Sie bitte hier die benötigten Dokumente hoch.",
+      "skizze": {
+        "label": "Grundrissskizze",
+        "position": 2,
+        "singleFile": true,
+        "hinweistext": "Hinweistext dokumenteGrundrissskizze",
+        "erforderlich": true
+      },
+      "heading": "Dokumente",
+      "sonstigedatei": {
+        "label": "Sonstige Dateien",
+        "position": 3,
+        "singleFile": true,
+        "hinweistext": "Hinweistext dokumenteSonstigeDatei",
+        "erforderlich": false
+      },
+      "zusatzfeldupload": {
+        "label": "Zusatzfeld Upload",
+        "position": 3,
+        "singleFile": true,
+        "hinweistext": "Hinweistext dokumenteZusatzfeld",
+        "erforderlich": false
+      }
+    },
+    "vorgang": {
+      "vorgang": {
+        "aktiv": true,
+        "label": "Vorgang",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Neuanschluss",
+            "hinweistext": null
+          },
+          {
+            "aktiv": true,
+            "label": "Anlagenerweiterung oder -änderung",
+            "hinweistext": null
+          },
+          {
+            "aktiv": true,
+            "label": "Stilllegung",
+            "hinweistext": null
+          }
+        ],
+        "hinweistext": "Hinweistext eegVorgang",
+        "erforderlich": true
+      }
+    },
+    "pvModule": {
+      "anzahlPVModule": {
+        "aktiv": true,
+        "label": "Anzahl der PV-Module gleichen Typs",
+        "hinweistext": "Hinweistext eegAnzahlPVModule",
+        "validierung": [
+          {
+            "regex": "^\\d+$",
+            "errorMessage": "Es sind nur Zahlen erlaubt."
+          }
+        ],
+        "erforderlich": true
+      },
+      "gesamtleistung": {
+        "aktiv": true,
+        "label": "Gesamtleistung aller PV-Module in kWp",
+        "hinweistext": "Sofern es sich um einen Solarenergieträger handelt, ist die Angabe der Gesamtleistung in kWp anzugeben.",
+        "erforderlich": true
+      },
+      "aufstellungsort": {
+        "aktiv": true,
+        "label": "Ort der Anbringung",
+        "optionen": [
+          {
+            "aktiv": true,
+            "label": "Freifläche"
+          },
+          {
+            "aktiv": true,
+            "label": "Dachfläche"
+          }
+        ],
+        "hinweistext": "Hinweistext eegAufstellungsort",
+        "erforderlich": true
+      },
+      "leistungPVModule": {
+        "aktiv": true,
+        "label": "Leistung je PV-Modul gleichen Typs in kWp",
+        "hinweistext": "Hinweistext eegLeistungPVModule",
+        "validierung": [
+          {
+            "regex": "^[,\\d]+$",
+            "errorMessage": "Es sind nur Zahlenwerte erlaubt."
+          },
+          {
+            "regex": "^0,\\d+$",
+            "errorMessage": "Wert muss kleiner 1,0 sein und darf daher nur mit 0, beginnen."
+          }
+        ],
+        "erforderlich": true
+      },
+      "informationstextAnlage": "Die folgenden Angaben können Sie später nachreichen, falls Sie diese Daten zum aktuellen Zeitpunkt noch nicht vollständig zur Hand haben.",
+      "frseInfo": false
+    },
+    "graustrom": {
+      "aktiv": true,
+      "label": "Geben Sie an, ob eine Einspeisung von Graustrom erfolgt.",
+      "hinweistext": "Hinweistext eegGraustrom",
+      "erforderlich": true
+    },
+    "seeNummer": {
+      "aktiv": true,
+      "label": "SEE-Nummer",
+      "hinweistext": null,
+      "validierung": [
+        {
+          "regex": "^[a-zA-Z0-9]*$",
+          "errorMessage": "Es dürfen nur Buchstaben und Zahlen eingegeben werden."
+        },
+        {
+          "regex": "^.{15}$",
+          "errorMessage": "Es müssen genau 15 Zeichen eingegeben werden."
+        }
+      ],
+      "erforderlich": false
+    },
+    "steuerbox": {
+      "aktiv": true,
+      "label": "Steuerung nach § 14a EnWG",
+      "header": "Wählen Sie aus, ob der Netzbetreiber über eine bereits verbaute Steuerbox vor Ort zugreifen kann.",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Nutzung vorhandener technischer Einrichtung möglich"
+        },
+        {
+          "aktiv": true,
+          "label": "Auftrag zum Einbau neuer technischer Einrichtungen durch den grundzuständiger Messstellenbetreiber"
+        },
+        {
+          "aktiv": true,
+          "label": "Auftrag zum Einbau neuer technischer Einrichtungen durch den wettbewerblichen Messstellenbetreiber"
+        }
+      ],
+      "hinweistext": "Hinweistext eegSteuerbox",
+      "erforderlich": true
+    },
+    "schaltplan": {
+      "aktiv": true,
+      "label": "Schaltplan",
+      "header": "Laden Sie bitte den Schaltplan der Anlage hoch.",
+      "hinweistext": "Hinweistext eegschaltplan",
+      "erforderlich": true
+    },
+    "information": "Wenn Sie einen Speicher ausschließlich als Verbrauchsgerät anmelden möchten, gehen Sie hierfür bitte in die Antragsstrecke Verbrauchsgeräte.",
+    "messkonzept": {
+      "aktiv": true,
+      "label": "Mess- und Betriebskonzept",
+      "links": [
+        {
+          "url": "\"https://www.google.de\"",
+          "label": "Messkonzept 1"
+        },
+        {
+          "url": null,
+          "label": "Testkonzept"
+        }
+      ],
+      "header": "Wählen Sie bitte das Mess- und Betriebskonzept der Anlage aus.",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Direktmessung"
+        },
+        {
+          "aktiv": true,
+          "label": "Indirektmessung"
+        }
+      ],
+      "hinweistext": "Hinweistext eegMesskonzept",
+      "erforderlich": true,
+      "messkonzeptDokumente": {
+        "aktiv": true,
+        "label": "Abweichendes Mess- und Betriebskonzept",
+        "hinweistext": "Hinweistext eegMesskonzeptDaten",
+        "erforderlich": true
+      }
+    },
+    "typNASchutz": {
+      "aktiv": true,
+      "label": "Typ Netz- und Anlagenschutz",
+      "hinweistext": "Hinweistext eegTypNASchutz",
+      "erforderlich": true
+    },
+    "inselbetrieb": {
+      "aktiv": true,
+      "label": "Erfüllt die Kundenanlage oder Teile der Kundenanlage (nach VDE-AR-E 2510-2) die Anforderungen der Inselbetriebsfähigkeit?",
+      "erforderlich": true
+    },
+    "introduction": "Ohne die folgenden Angaben können wir Ihre Anfrage nicht bearbeiten!",
+    "kontoinhaber": {
+      "text": "An wen soll die Vergütung ausgezahlt werden?",
+      "aktiv": true,
+      "label": "Kontoinhaber",
+      "hinweistext": "Hinweistext eegKontoinhaber",
+      "erforderlich": true
+    },
+    "hausanschluss": {
+      "aktiv": true,
+      "label": "Am Standort gibt es einen bestehenden Hausanschluss.",
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "netzbetreiber": {
+      "aktiv": true,
+      "label": "Steuerung nach § 9 EEG",
+      "header": "Wählen Sie aus, ob der Netzbetreiber über eine bereits verbaute Steuerbox vor Ort zugreifen kann.",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Nutzung vorhandener technischer Einrichtung möglich"
+        },
+        {
+          "aktiv": true,
+          "label": "Auftrag zum Einbau neuer technischer Einrichtungen durch den grundzuständiger Messstellenbetreiber"
+        },
+        {
+          "aktiv": true,
+          "label": "Auftrag zum Einbau neuer technischer Einrichtungen durch den wettbewerblichen  Messstellenbetreiber"
+        }
+      ],
+      "hinweistext": "Hinweistext eegSteuerungnach9",
+      "erforderlich": true
+    },
+    "steuerungsart": {
+      "text": "Wählen Sie aus, wie die Steuerung umgesetzt wird.",
+      "aktiv": true,
+      "label": "Steuerungsart",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Direkt"
+        },
+        {
+          "aktiv": true,
+          "label": "Energiemanagementsystem"
+        }
+      ],
+      "hinweistext": "Hinweistext eegSteuerungUmsetzung",
+      "erforderlich": true
+    },
+    "energietraeger": {
+      "aktiv": true,
+      "label": "Anlagenart/Energieträger",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Solarenergie"
+        },
+        {
+          "aktiv": true,
+          "label": "Wasserkraft"
+        },
+        {
+          "aktiv": true,
+          "label": "Windkraft"
+        },
+        {
+          "aktiv": true,
+          "label": "Geothermie"
+        },
+        {
+          "aktiv": true,
+          "label": "Biomasse"
+        },
+        {
+          "aktiv": true,
+          "label": "Speicher"
+        }
+      ],
+      "hinweistext": null,
+      "erforderlich": false
+    },
+    "steuerbareLast": {
+      "text": "Befindet sich hinter dem Netzanschlusspunkt eine steuerbare Verbrauchseinrichtung nach § 14a EnWG mit einer Netzanschlussleistung von mehr als 4,2 kW? (Mehrfachauswahl möglich)",
+      "aktiv": true,
+      "label": null,
+      "hinweistext": "Wählen Sie aus, ob sich hinter dem Netzanschlusspunkt eine steuerbare Verbrauchseinrichtung nach § 14a EnWG (Ladepunkt, Wärmepumpe, Klimaanlage oder Speicher) mit einer Netzanschlussleistung von mehr als 4,2 kW befindet.",
+      "erforderlich": true
+    },
+    "wechselrichter": {
+      "typ": {
+        "aktiv": true,
+        "label": "Wechselrichtertyp",
+        "hinweistext": "individuelles Hinweistextfeld",
+        "erforderlich": true
+      },
+      "anzahl": {
+        "aktiv": true,
+        "label": "Anzahl der Wechselrichter dieses Typs",
+        "hinweistext": "individuelles Hinweistextfeld",
+        "validierung": [
+          {
+            "regex": "^\\d+$",
+            "errorMessage": "Es sind nur Zahlen erlaubt."
+          }
+        ],
+        "erforderlich": true
+      },
+      "leistung": {
+        "aktiv": true,
+        "label": "Maximale Wirkleistung des Wechselrichters in kW",
+        "hinweistext": "individuelles Hinweistextfeld",
+        "validierung": [],
+        "erforderlich": true
+      },
+      "datenblatt": {
+        "aktiv": false,
+        "label": "Datenblatt",
+        "hinweistext": "individuelles Hinweistextfeld",
+        "erforderlich": true
+      },
+      "hersteller": {
+        "aktiv": true,
+        "label": "Wechselrichterhersteller",
+        "hinweistext": "Hinweistext eegWechselrichterhersteller",
+        "erforderlich": true
+      },
+      "erforderlich": true,
+      "einheitenzertifikat": {
+        "aktiv": true,
+        "label": "Einheitenzertifikat des Wechselrichters",
+        "hinweistext": "Hinweistext eegEinheitenzertifikat",
+        "erforderlich": true
+      },
+      "zerezRegisternummer": {
+        "aktiv": true,
+        "label": "ZEREZ-Registernummer",
+        "hinweistext": "Hinweistext eegZEREZRegisternummer",
+        "validierung": [
+          {
+            "regex": "^[a-zA-Z0-9-]*$",
+            "errorMessage": "Es dürfen nur Buchstaben, Zahlen und Bindestriche verwendet werden."
+          },
+          {
+            "regex": "^.{15}$|^.{17}$",
+            "errorMessage": "Es müssen exakt 15 oder 17 Zeichen eingegeben werden."
+          }
+        ],
+        "erforderlich": true
+      },
+      "anlagenspeicherkopplung": {
+        "aktiv": true,
+        "header": "Wählen Sie aus, wie das System mit den Phasen der Anlage des Anschlussnutzers gekoppelt wird. (Mehrfachauswahl möglich)",
+        "hinweistext": "Hinweistext eegAnlagenspeicherkopplung",
+        "erforderlich": true
+      },
+      "summeMaximaleWirkleistung": {
+        "aktiv": true,
+        "label": "Summe der maximalen Wirkleistung in kW",
+        "hinweistext": "Hinweistext eegSummeMaximaleWirkleistung"
+      },
+      "summeMaximalenScheinleistung": {
+        "aktiv": true,
+        "label": "Summe der maximalen Scheinleistung in kVA",
+        "hinweistext": "Hinweistext eegSummeScheinleistung"
+      },
+      "maximaleScheinleistungWechselrichters": {
+        "aktiv": true,
+        "label": "Maximale Scheinleistung des Wechselrichters in kVA",
+        "hinweistext": "Hinweistext eegMaximaleScheinleistung",
+        "erforderlich": true
+      }
+    },
+    "zusatzabfragen": [
+      {
+        "aktiv": true,
+        "label": "Zusatzinformation",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext stromZusatzabfrage",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "schwierigkeiten": {
+      "text": "Sind Sie ein Unternehmen in Schwierigkeiten oder bestehen gegen Ihr Unternehmen offene Rückforderungsansprüche?",
+      "aktiv": true,
+      "label": "Unternehmen in Schwierigkeiten oder offene Rückforderungsansprüche",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Ich bin ein Unternehmen in Schwierigkeiten"
+        },
+        {
+          "aktiv": true,
+          "label": "Gegen mein Unternehmen bestehen offene Rückforderungsansprüche"
+        },
+        {
+          "aktiv": true,
+          "label": "Beides nicht zutreffend"
+        }
+      ],
+      "hinweistext": "Hinweistext eegSchwierigkeiten",
+      "erforderlich": true
+    },
+    "speichereinheit": {
+      "text": "Geben Sie an, mit welchem der o.g. Wechselrichter der Erzeugungsanlage dieser Speicher verknüpft ist.",
+      "aktiv": true,
+      "heading": "Angaben zur Speichereinheit",
+      "erforderlich": true,
+      "summeLadeleistung": {
+        "aktiv": true,
+        "label": "Summe der Ladeleistung (Netzbezugsleistung) aller Speichereinheiten in kW",
+        "hinweistext": "Hinweistext eegSummeLadeleistungSpeichereinheit",
+        "erforderlich": true
+      },
+      "anzahlSpeichereinheiten": {
+        "aktiv": true,
+        "label": "Anzahl der Speichereinheiten dieses Typs",
+        "hinweistext": "Hinweistext eegAnzahlSpeichereinheiten",
+        "erforderlich": true
+      },
+      "summeMaximaleScheinleistung": {
+        "aktiv": true,
+        "label": "Summe der maximalen Scheinleistung aller Speichereinheiten in kVA",
+        "hinweistext": "Hinweistext eegSummeScheinleistung"
+      },
+      "nettokapazitaetSpeichereinheit": {
+        "aktiv": true,
+        "label": "Nettokapazität der Speichereinheit in kWh",
+        "hinweistext": "Hinweistext eegNettokapazitätSpeicher",
+        "erforderlich": true
+      },
+      "wechselrichterErzeugungsanlage": {
+        "aktiv": true,
+        "label": "Wechselrichter der Erzeugungsanlage",
+        "hinweistext": "Hinweistext eegWechselrichterErzeugungsanlage",
+        "erforderlich": true
+      },
+      "bruttokapazitaetSpeichereinheit": {
+        "aktiv": true,
+        "label": "Bruttokapazität der Speichereinheit in kWh",
+        "hinweistext": "Hinweistext eegBruttokapazitätSpeicher",
+        "erforderlich": true
+      },
+      "maximaleLadeleistungSpeichereinheit": {
+        "aktiv": true,
+        "label": "Maximale Ladeleistung (Netzbezugsleistung) der Speichereinheit in kW",
+        "hinweistext": "Hinweistext eegMaximaleNetzbezugsleistungSpeicher",
+        "erforderlich": true
+      },
+      "phasenleiterAnlagenspeicherkopplung": {
+        "aktiv": true,
+        "label": "Wählen Sie aus, an welche Phasen die Speichereinheit angeschlossen wurde. (Mehrfachauswahl möglich)",
+        "hinweistext": "Hinweistext eegPhasenSpeicher",
+        "erforderlich": true
+      },
+      "maximaleEntladeleistungSpeichereinheit": {
+        "aktiv": true,
+        "label": "Maximale Entladeleistung (Netzeinspeiseleistung) der Speichereinheit in kW",
+        "hinweistext": "Hinweistext eegMaximaleNetzeinspeiseleistungSpeicher",
+        "erforderlich": true
+      }
+    },
+    "nutzenderZaehler": {
+      "aktiv": true,
+      "label": "Ist ein bereits zu nutzender Zähler vorhanden?",
+      "hinweistext": "Hinweistext eegZaehler",
+      "erforderlich": true
+    },
+    "separaterZaehler": {
+      "aktiv": true,
+      "label": "Soll die Messung über einen separaten Zähler erfolgen?",
+      "hinweistext": "Hinweistext eegSeparaterZaehler",
+      "erforderlich": true
+    },
+    "verguetungAnlage": {
+      "aktiv": true,
+      "label": "Vergütungsrelevante Nachweise zur gewählten Veräußerungsform",
+      "hinweistext": "Bitte reichen Sie Nachweise ein, welche für die gewählte Veräußerungsform nach EEG relevant sind.",
+      "erforderlich": true
+    },
+    "verwendungszweck": {
+      "aktiv": true,
+      "label": "Verwendungszweck",
+      "hinweistext": "Hinweistext eegVerwendungszweck",
+      "erforderlich": true
+    },
+    "zaehlerAusgebaut": {
+      "aktiv": true,
+      "label": "Sollen zusätzlich Zähler ausgebaut werden?",
+      "hinweistext": "Hinweistext eegZaehlerAusbau",
+      "erforderlich": true
+    },
+    "praequalifikation": {
+      "aktiv": true,
+      "label": "Wird eine Anschlussnetzbetreiberbestätigung zur Präqualifikation für Regelleistung gewünscht?",
+      "hinweistext": "Wählen Sie aus, ob eine Anschlussnetzbetreiber-Bestätigung zur Präqualifikation für Regelleistung gewünscht wird.",
+      "erforderlich": true
+    },
+    "hatSpeichereinheit": {
+      "aktiv": true,
+      "label": "Soll gleichzeitig ein Speicher angemeldet werden bzw. ist in der Anlage ein Speicher integriert?",
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "herstellerNASchutz": {
+      "aktiv": true,
+      "label": "Hersteller Netz- und Anlagenschutz",
+      "hinweistext": "Hinweistext eegHerstellerNASchutz",
+      "erforderlich": true
+    },
+    "veraeusserungsform": {
+      "text": "Geben Sie die gewünschte Veräußerungsform der Einspeisung an.",
+      "aktiv": true,
+      "label": "Veräußerungsform",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Unentgeltliche Abnahme"
+        },
+        {
+          "aktiv": true,
+          "label": "Geförderte Direktvermarktung (Marktprämie) nach § 20 EEG"
+        },
+        {
+          "aktiv": true,
+          "label": "Einspeisevergütung nach § 21 Abs. 1 EEG"
+        },
+        {
+          "aktiv": true,
+          "label": "Mieterstromzuschlag nach § 21 Abs. 3 EEG"
+        },
+        {
+          "aktiv": true,
+          "label": "Sonstige Direktvermarktung nach § 21a EEG"
+        },
+        {
+          "aktiv": true,
+          "label": "Ohne gesetzliche Vergütung"
+        }
+      ],
+      "hinweistext": "Wählen Sie aus, wie der eingespeiste Strom vergütet bzw. vermarktet werden soll.",
+      "erforderlich": true
+    },
+    "zeitreihentypBezug": {
+      "text": "Welcher Zeitreihentyp soll für den Bezug verwendet werden?",
+      "aktiv": true,
+      "label": "Zeitreihentyp Bezug",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "SLS"
+        },
+        {
+          "aktiv": true,
+          "label": "LGS"
+        },
+        {
+          "aktiv": true,
+          "label": "Andere"
+        }
+      ],
+      "hinweistext": "Geben Sie an, durch wen die Vermarktung des Graustroms erfolgt.",
+      "erforderlich": true
+    },
+    "zerezRegisternummer": {
+      "aktiv": true,
+      "label": "ZEREZ-Registernummer",
+      "hinweistext": "Hinweistext eegZEREZ-Registernummer",
+      "validierung": [
+        {
+          "regex": "^[a-zA-Z0-9-]*$",
+          "errorMessage": "Es dürfen nur Buchstaben, Zahlen und Bindestriche verwendet werden."
+        },
+        {
+          "regex": "^.{15}$|^.{17}$",
+          "errorMessage": "Es müssen exakt 15 oder 17 Zeichen eingegeben werden."
+        }
+      ],
+      "erforderlich": true
+    },
+    "ausserbetriebsetzung": {
+      "aktiv": true,
+      "label": "Datum der technischen Außerbetriebsetzung",
+      "hinweistext": null,
+      "validierung": [
+        {
+          "regex": "^(0[1-9]|1\\d|2\\d|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$",
+          "errorMessage": "Bitte geben Sie ein Datum im Format DD.MM.YYYY ein."
+        }
+      ],
+      "erforderlich": false
+    },
+    "betriebsbereitschaft": {
+      "aktiv": true,
+      "label": "Datum der geplanten technischen Betriebsbereitschaft nach EEG",
+      "hinweistext": null,
+      "validierung": [
+        {
+          "regex": "^(0[1-9]|1\\d|2\\d|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$",
+          "errorMessage": "Bitte geben Sie ein Datum im Format DD.MM.YYYY ein."
+        }
+      ],
+      "erforderlich": false
+    },
+    "graustromvermarktung": {
+      "aktiv": true,
+      "label": "Vermarkter des Graustroms",
+      "hinweistext": "Geben Sie an, durch wen die Vermarktung des Graustroms erfolgt.",
+      "erforderlich": true
+    },
+    "einspeisewirkleistung": {
+      "text": "Welche Einspeisewirkleistung wird für den Netzanschlusspunkt mit dem Netzbetreiber vereinbart?",
+      "aktiv": true,
+      "label": "Gewünschte Einspeisewirkleistung (PAV, EWert) für den Netzanschlusspunkt in kW",
+      "hinweistext": "Hinweistext eegEinspeisewirkleistung",
+      "erforderlich": true
+    },
+    "gesamtMindestleistung": {
+      "aktiv": true,
+      "label": "Gesamt-Mindestleistung der Anlage am Netzanschluss in kW",
+      "hinweistext": "Tragen Sie die Mindestleistung in Kilowatt (kW) ein, auf die der Netzbetreiber den Netzanschluss im Fall von § 14a EnWG dimmen kann. Diese Leistung muss geringer sein, als die Summe der Netzanschlussleistungen aller steuerbaren Verbrauchseinrichtungen am Netzanschlusspunkt.",
+      "erforderlich": false
+    },
+    "handeltBestandsanlage": {
+      "text": "Handelt es sich um eine Bestandsanlage vor dem 01.01.2024?",
+      "aktiv": true,
+      "label": "Bestandsanlage vor dem 01.01.2024",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Ja (Anlage ohne Steuerung § 14a alte Fassung)"
+        },
+        {
+          "aktiv": true,
+          "label": "Ja (Anlage mit Steuerung §14a  alte Fassung)"
+        },
+        {
+          "aktiv": true,
+          "label": "Nein"
+        }
+      ],
+      "hinweistext": "Hinweistext eegBestandsanlage",
+      "erforderlich": true
+    },
+    "maximalleistungAnlage": {
+      "aktiv": true,
+      "label": "Maximalleistung der Anlage in kW",
+      "hinweistext": "Hinweistext eegMaximalleistungAnlage",
+      "validierung": [
+        {
+          "regex": "^\\d+$",
+          "errorMessage": "Es sind nur Zahlen erlaubt."
+        }
+      ],
+      "erforderlich": true
+    },
+    "netzentgeldreduzierung": {
+      "text": "Wählen Sie  aus, welches Modul der Netzentgeldreduzierung  nach § 14a EnWG Sie anwenden möchten.",
+      "aktiv": true,
+      "label": "Netzentgeldmodul nach § 14a EnWG",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Modul 1: Pauschale Reduzierung der Netzentgelte"
+        },
+        {
+          "aktiv": true,
+          "label": "Modul 2: Prozentuale Reduzierung des Arbeitspreises"
+        }
+      ],
+      "hinweistext": "Hinweistext eegNetzentgeldreduzierung",
+      "erforderlich": true
+    },
+    "phasenleiterStromfluss": {
+      "aktiv": true,
+      "label": "Über welche(n) Phasenleiter erfolgt der Stromfluss?",
+      "hinweistext": "Hinweistext eegPhasenleiterStromfluss",
+      "erforderlich": true
+    },
+    "speicherLastmanagement": {
+      "aktiv": true,
+      "label": "Wählen Sie aus, ob der Speicher über ein Lastmanagement gespeichert wird und wenn ja, wie die Steuerung erfolgt.",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Ja (dynamisch)"
+        },
+        {
+          "aktiv": true,
+          "label": "Ja (statisch)"
+        },
+        {
+          "aktiv": true,
+          "label": "Nein"
+        }
+      ],
+      "hinweistext": "Hinweistext eegLastmanagementSpeicher",
+      "erforderlich": true
+    },
+    "zusatzabfrageSteuerung": [
+      {
+        "aktiv": true,
+        "label": "Zusatzabfrage Angaben zur Steuerung",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext eegZusatzabfrageAngabenzurSteuerung",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "inbetriebsetzungstermin": {
+      "aktiv": true,
+      "label": "Datum der (geplanten) technischen Inbetriebsetzung",
+      "hinweistext": null,
+      "validierung": [
+        {
+          "regex": "^(0[1-9]|1\\d|2\\d|3[01])\\.(0[1-9]|1[0-2])\\.\\d{4}$",
+          "errorMessage": "Bitte geben Sie ein Datum im Format DD.MM.YYYY ein."
+        }
+      ],
+      "erforderlich": true
+    },
+    "kopplungSpeichereinheit": {
+      "aktiv": true,
+      "label": "Kopplung der Speichereinheit",
+      "hinweistext": "Hinweistext eegKopplungSpeichereinheit",
+      "erforderlich": true
+    },
+    "vorhandeneZaehlernummer": {
+      "aktiv": true,
+      "label": "Vorhandene Zählernummer",
+      "hinweistext": "Hinweistext eegseparaterZaehler",
+      "erforderlich": true
+    },
+    "freiwilligeSteuerbarkeit": {
+      "aktiv": true,
+      "label": "Ist trotz des Bestandsschutzes ein Wechsel in die freiwillige Steuerbarkeit gewünscht?",
+      "hinweistext": "Hinweistext eegWechselFreiwilligeSteuerbarkeit",
+      "erforderlich": true
+    },
+    "herstellungSteuerbarkeit": {
+      "text": "Wählen Sie aus, wer für die Herstellung der Steuerbarkeit beauftragt wird.",
+      "aktiv": true,
+      "label": "Herstellung der Steuerbarkeit durch",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Grundzuständiger Messstellenbetreiber"
+        },
+        {
+          "aktiv": true,
+          "label": "Wettbewerblicher Messstellenbetreiber"
+        },
+        {
+          "aktiv": true,
+          "label": "Netzbetreiber"
+        }
+      ],
+      "hinweistext": "Wählen Sie aus, wer mit der Herstellung der Steuerbarkeit beauftragt wird. Hinweis: für die Bereitstellung und Anbindung des Steuergerätes (Steuerbox) an der Übergabestelle Netz zur Kundenanlage ist der Messtellenbetreiber zuständig.",
+      "erforderlich": true
+    },
+    "netzorientieWirkleistung": {
+      "aktiv": true,
+      "label": "Netzorientiert steuerbare Wirkleistung",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Ja, Einzelsteuerung als SteuVE"
+        },
+        {
+          "aktiv": true,
+          "label": "Ja, Steuerung über EMS"
+        },
+        {
+          "aktiv": true,
+          "label": "Nein"
+        }
+      ],
+      "hinweistext": "Hinweistext eegNetzorientiertWirkleistung",
+      "erforderlich": true
+    },
+    "zeitreihentypEinspeisung": {
+      "text": "Welcher Zeitreihentyp soll für die Einspeisung verwendet werden?",
+      "aktiv": true,
+      "label": "Zeitreihentyp Einspeisung",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "SOL"
+        },
+        {
+          "aktiv": true,
+          "label": "EGS"
+        },
+        {
+          "aktiv": true,
+          "label": "Andere"
+        }
+      ],
+      "hinweistext": "Wählen Sie aus, welcher Zeitreihentyp für den Bezug verwendet werden soll.",
+      "erforderlich": true
+    },
+    "leistungsflussueberwachung": {
+      "aktiv": true,
+      "label": "Wird eine Leistungsflussüberwachung eingesetzt?",
+      "hinweistext": null,
+      "erforderlich": true
+    },
+    "zusatzabfragenKundenanlage": [
+      {
+        "aktiv": true,
+        "label": "Zusatzabfrage Angaben zur Kundenanlage",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext eegZusatzabfrageAngabenzurKundenanlage",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "fernsteuerbarkeitNachweisPV": {
+      "aktiv": true,
+      "label": "Nachweise über die Fernsteuerbarkeit der Erzeugungsanlage",
+      "hinweistext": "Bitte reichen Sie Nachweise zur Fernsteuerbarkeit der PV-Anlage ein, welche für die gewählte Veräußerungsform relevant.  ",
+      "erforderlich": true
+    },
+    "hinweistextSteuerempfaenger": "Hinweistext zum Funkrundsteuerempfänger.",
+    "nachweisMieterstromzuschlag": {
+      "aktiv": true,
+      "label": "Relevante Nachweise für den Mieterstromzuschlag",
+      "links": [
+        {
+          "url": null,
+          "label": "Testlink"
+        }
+      ],
+      "hinweistext": "Hinweistext eegNachweisMieterstromzuschlag",
+      "erforderlich": true
+    },
+    "zaehlerwechselNetzbetreiber": {
+      "text": "Wählen Sie aus, durch wen der Zählerwechsel erfolgen soll.",
+      "aktiv": true,
+      "label": "Zählerwechsel durch",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Grundzuständigen Messstellenbetreiber"
+        },
+        {
+          "aktiv": true,
+          "label": "Wettbewerblicher Messstellenbetreiber"
+        }
+      ],
+      "hinweistext": "Wählen Sie aus, durch wen der Zählereinbau erfolgen soll.",
+      "erforderlich": true
+    },
+    "betriebsweiseSpeichereinheit": {
+      "text": "Wählen Sie die Betriebsweise des Speichers aus.",
+      "aktiv": true,
+      "label": "Betriebsweise Speichereinheit",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Kein Bezug und keine Einspeisung"
+        },
+        {
+          "aktiv": true,
+          "label": "Bezug und keine Einspeisung"
+        },
+        {
+          "aktiv": true,
+          "label": "Kein Bezug aber Einspeisung"
+        },
+        {
+          "aktiv": true,
+          "label": "Bezug und Einspeisung"
+        }
+      ],
+      "hinweistext": "individuelles eegBetriebsweiseSpeichereinheit",
+      "erforderlich": true
+    },
+    "betriebsweiseErzeugungsanlage": {
+      "aktiv": true,
+      "label": "Betriebsweise Erzeugungsanlage",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Überschusseinspeisung"
+        },
+        {
+          "aktiv": true,
+          "label": "Volleinspeisung"
+        },
+        {
+          "aktiv": true,
+          "label": "Nulleinspeisung"
+        }
+      ],
+      "hinweistext": "Wählen Sie die Betriebsweise der Erzeugungsanlage aus. Es kann der gesamte (Volleinspeisung), nur der überschüssige (Überschusseinspeisung) und nicht selbst genutzte oder gar kein erzeugter Strom (Nulleinspeisung) in das öffentliche Netz eingespeist werden.",
+      "erforderlich": true
+    },
+    "gesamtleistungOhneDieseAnlage": {
+      "aktiv": true,
+      "label": "Gesamtleistung der Anlagen auf dem Grundstück (ohne neue Anlage)",
+      "hinweistext": "Hinweistext eegGesamtleistungGrundstueck",
+      "validierung": [],
+      "erforderlich": true
+    },
+    "headingAngabenSpeichereinheit": "Angaben zu der/den Speichereinheit(en)",
+    "mieterstromzuschlagErwuenscht": {
+      "aktiv": true,
+      "label": "Ist ein Mieterstromzuschlag nach § 21 Abs. 3 EEG 2017 erwünscht?",
+      "hinweistext": "Hinweistext eegMieterstromzuschlagErwuenscht",
+      "erforderlich": true
+    },
+    "typLeistungsflussueberwachung": {
+      "aktiv": true,
+      "label": "Typ der Leistungsflussüberwachung",
+      "hinweistext": "Hinweistext eegTypLeistungsflussueberwachung",
+      "erforderlich": true
+    },
+    "wechselrichterSpeichereinheit": {
+      "typ": {
+        "aktiv": true,
+        "label": "Typ des Wechselrichters der Speichereinheit",
+        "hinweistext": "individuelles Hinweistextfeld",
+        "erforderlich": true
+      },
+      "anzahl": {
+        "aktiv": true,
+        "label": "Anzahl der Speichereinheiten dieses Typs",
+        "hinweistext": "Hinweistext eegSpeichereinheitAcAnzahl",
+        "validierung": [],
+        "erforderlich": true
+      },
+      "heading": "Angaben zum Wechselrichter der Speichereinheit",
+      "leistung": {
+        "aktiv": true,
+        "label": "Leistung in Watt",
+        "hinweistext": "individuelles Hinweistextfeld",
+        "validierung": [],
+        "erforderlich": true
+      },
+      "datenblatt": {
+        "aktiv": true,
+        "label": "Datenblatt",
+        "hinweistext": "individuelles Hinweistextfeld",
+        "erforderlich": true
+      },
+      "hersteller": {
+        "aktiv": true,
+        "label": "Hersteller des Wechselrichters der Speichereinheit",
+        "hinweistext": "Hinweistext eegWechselrichterherstellerSpeichereinheit",
+        "erforderlich": true
+      },
+      "erforderlich": true,
+      "summeLadeleistung": {
+        "aktiv": true,
+        "label": "Summe der Ladeleistung (Netzbezugsleistung) aller Speichereinheiten in kW",
+        "hinweistext": "Hinweistext eegSummeLadeleistungSpeichereinheit",
+        "erforderlich": true
+      },
+      "einheitenzertifikat": {
+        "aktiv": true,
+        "label": "Einheitenzertifikat des Wechselrichters der Speichereinheit",
+        "hinweistext": "Hinweistext eegEinheitenzertifikatSpeichereinheit",
+        "erforderlich": true
+      },
+      "zerezRegisternummer": {
+        "aktiv": true,
+        "label": "ZEREZ-Registernummer",
+        "hinweistext": "Hinweistext eegZEREZRegisternummer",
+        "validierung": [
+          {
+            "regex": "^[a-zA-Z0-9-]*$",
+            "errorMessage": "Es dürfen nur Buchstaben, Zahlen und Bindestriche verwendet werden."
+          },
+          {
+            "regex": "^.{15}$|^.{17}$",
+            "errorMessage": "Es müssen exakt 15 oder 17 Zeichen eingegeben werden."
+          }
+        ],
+        "erforderlich": true
+      },
+      "summeMaximaleScheinleistung": {
+        "aktiv": true,
+        "label": "Summe der maximalen Scheinleistung aller Speichereinheiten in kVA",
+        "hinweistext": "Hinweistext eegSummeScheinleistung"
+      },
+      "nettokapazitaetSpeichereinheit": {
+        "aktiv": true,
+        "label": "Nettokapazität der Speichereinheit in kWh",
+        "hinweistext": "Hinweistext eegNettokapazitaetSpeichereinheit",
+        "erforderlich": true
+      },
+      "bruttokapazitaetSpeichereinheit": {
+        "aktiv": true,
+        "label": "Bruttokapazität der Speichereinheit in kWh",
+        "hinweistext": "Hinweistext eegBruttokapazitaetSpeichereinheit",
+        "erforderlich": true
+      },
+      "maximaleLadeleistungSpeichereinheit": {
+        "aktiv": true,
+        "label": "Maximale Ladeleistung (Netzbezugsleistung) der Speichereinheit in kW",
+        "hinweistext": "Hinweistext eegMaximaleLadeleistungSpeichereinheit",
+        "erforderlich": true
+      },
+      "phasenleiterAnlagenspeicherkopplung": {
+        "aktiv": true,
+        "label": "Wählen Sie aus, an welche Phasen die Speichereinheit angeschlossen wurde. (Mehrfachauswahl möglich)",
+        "hinweistext": "Hinweistext eegPhasenleiterAnlagenspeicherkopplung",
+        "erforderlich": true
+      },
+      "maximaleEntladeleistungSpeichereinheit": {
+        "aktiv": true,
+        "label": "Maximale Entladeleistung (Netzeinspeiseleistung) der Speichereinheit in kW",
+        "hinweistext": "Hinweistext eegMaximaleEntladeleistungSpeichereinheit",
+        "erforderlich": true
+      },
+      "scheinleistungWechselrichtersSpeichereinheit": {
+        "aktiv": true,
+        "label": "Maximale Scheinleistung des Wechselrichters der Speichereinheit in kVA",
+        "hinweistext": "Hinweistext eegMaximaleScheinleistungSpeichereinheit",
+        "erforderlich": true
+      }
+    },
+    "zusatzabfragenSpeichereinheit": [
+      {
+        "aktiv": true,
+        "label": "Zusatzabfrage Angaben zur Speichereinheit",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext eegZusatzabfrageAngabezurSpeicher",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "bilanzkreisGraustromeinspeisung": {
+      "aktiv": true,
+      "label": "Bilanzkreis der Graustromeinspeisung",
+      "hinweistext": "Geben Sie an, in welchen Bilanzkreis die Einspeisung des Graustroms erfolgt.",
+      "erforderlich": true
+    },
+    "benoetigtehausanschlusssicherung": {
+      "aktiv": true,
+      "label": "Benötigte Hausanschlusssicherung in Ampere (A)",
+      "hinweistext": "Geben Sie an, ob die Leistung der Hausanschlusssicherung ausreicht oder erhöht werden muss.",
+      "validierung": [
+        {
+          "regex": "^\\d+$",
+          "errorMessage": "Es sind nur Zahlen erlaubt."
+        }
+      ],
+      "erforderlich": true
+    },
+    "zaehlernummerzusaetzlichZaehlers": {
+      "aktiv": true,
+      "auszubauendenZaehlers": {
+        "aktiv": true,
+        "label": "Zählernummer des zusätzlich auszubauenden Zählers",
+        "hinweistext": "Hinweistext eegZaehlerAusbau",
+        "erforderlich": true
+      }
+    },
+    "verguetungsrelevanteInformationen": {
+      "aktiv": true,
+      "label": "Vergütungsrelevante Angaben",
+      "hinweistext": null
+    },
+    "zusatzabfrageVerguetungsrelevante": [
+      {
+        "aktiv": true,
+        "label": "Zusatzabfrage Vergütungsrelevante Angaben",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext eegZusatzabfrageVerguetungsrelevante",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "herstellerLeistungsflussueberwachung": {
+      "aktiv": true,
+      "label": " Hersteller der Leistungsflussüberwachung",
+      "hinweistext": "Hinweistext eegHerstellerLeistungsflussueberwachung",
+      "erforderlich": true
+    },
+    "zertifikatLeistungsflussueberwachung": {
+      "aktiv": true,
+      "label": "Zertifikat der Leistungsflussüberwachung",
+      "hinweistext": "Hinweistext eegLeistungsflussDaten",
+      "erforderlich": true
+    },
+    "wettbewerblichenMessstellenbetreibers": {
+      "aktiv": true,
+      "label": "Angabe des wettbewerblichen Messstellenbetreibers",
+      "hinweistext": "Hinweistext eegWettbewerblicherMessstellenbetreiber",
+      "erforderlich": true
+    },
+    "leistungserhoehungHausanschlusssicherung": {
+      "aktiv": true,
+      "label": "Wird eine Leistungserhöhung der Hausanschlusssicherung benötigt?",
+      "hinweistext": "Geben Sie an, ob die Leistung der Hausanschlusssicherung ausreicht oder erhöht werden muss.",
+      "erforderlich": true
+    },
+    "technischenBetriebseinrichtungZusatzabfragen": [
+      {
+        "aktiv": true,
+        "label": "Zusatzabfrage Angaben zur technischen Betriebseinrichtung",
+        "header": "Zusatzabfragen1",
+        "hinweistext": "Hinweistext technischenBetriebseinrichtungZusatzabfragen",
+        "platzhalter": null,
+        "validierung": [],
+        "erforderlich": false
+      }
+    ],
+    "anlagenschutzZertifikat": {
+      "aktiv": true,
+      "label": "Zertifikat Netz- und Anlagenschutz",
+      "hinweistext": "Hinweistext eegAnlagenschutzZertifikat",
+      "erforderlich": true
+    },
+    "anlagenschutzBetriebsweise": {
+      "aktiv": true,
+      "label": "Netz- und Anlagenschutz",
+      "optionen": [
+        {
+          "aktiv": true,
+          "label": "Zentral am Zählerplatz"
+        },
+        {
+          "aktiv": true,
+          "label": "Integriert im Wechselrichter"
+        }
+      ],
+      "hinweistext": "Hinweistext eegBetriebsweiseAnlagenschutz",
+      "erforderlich": true,
+      "text": "Wie wird das Konzept zum Netz- und Anlagenschutz umgesetzt?"
+    },
+    "anlagenschutzHeader": "Angaben zum NA-Schutz",
+    "anlagenschutzHersteller": {
+      "aktiv": true,
+      "erforderlich": true,
+      "label": "Hersteller des Netz- und Anlagenschutzes",
+      "hinweistext": "Hinweistext eegAnlagenschutzHersteller"
+    },
+    "anlagenschutzTyp": {
+      "aktiv": true,
+      "erforderlich": true,
+      "label": "Typ des Netz- und Anlagenschutzes",
+      "hinweistext": "Hinweistext eegAnlagenschutzTyp"
+    }
+  }
+}
